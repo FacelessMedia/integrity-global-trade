@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Globe, Shield, Award, Users, Target, Eye } from "lucide-react";
+import { ArrowRight, Globe, Shield, Award, Users, Target, Eye, Linkedin, MapPin, ShieldCheck } from "lucide-react";
 import { SITE_CONFIG, STATS } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -67,7 +67,8 @@ export default function AboutPage() {
                   connection applications.
                 </p>
                 <p>
-                  Today, Integrity Global Trade serves clients across 50+ countries, providing
+                  Today, with over <strong>$3 billion in closed contract volume</strong>,
+                  Integrity Global Trade serves clients across 50+ countries, providing
                   precious metals, non-ferrous metals, and critical minerals to semiconductor
                   manufacturers, industrial consumers, renewable energy companies, and
                   institutional investors worldwide.
@@ -178,12 +179,27 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-slate-50 rounded-2xl p-10 border border-slate-200">
               <div className="flex flex-col md:flex-row gap-8 items-start">
-                <div className="w-32 h-32 rounded-xl bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center shrink-0">
-                  <span className="text-4xl font-bold text-amber-700">TM</span>
+                <div className="shrink-0">
+                  <div className="w-32 h-32 rounded-xl bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center mb-3">
+                    <span className="text-4xl font-bold text-amber-700">TM</span>
+                  </div>
+                  <a
+                    href={SITE_CONFIG.founderLinkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-[#0A66C2] hover:bg-[#004182] text-white text-xs font-medium px-4 py-2 rounded-lg transition-colors w-full justify-center"
+                  >
+                    <Linkedin className="h-3.5 w-3.5" />
+                    View LinkedIn
+                  </a>
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-1">Timothy Mercer</h3>
-                  <p className="text-amber-600 font-medium mb-4">Founder & CEO</p>
+                  <p className="text-amber-600 font-medium mb-1">Founder & CEO</p>
+                  <p className="text-slate-400 text-sm mb-4 flex items-center gap-1">
+                    <MapPin className="h-3.5 w-3.5" />
+                    {SITE_CONFIG.address.city}, {SITE_CONFIG.address.state}
+                  </p>
                   <div className="space-y-3 text-slate-600 leading-relaxed">
                     <p>
                       Timothy Mercer brings extensive experience in global commodities trading,
@@ -193,10 +209,11 @@ export default function AboutPage() {
                       across global markets.
                     </p>
                     <p>
-                      Under his leadership, the company has established partnerships with
+                      Under his leadership, the company has facilitated over <strong className="text-slate-800">$3 billion
+                      in closed contracts and facilitation</strong>, established partnerships with
                       UN-certified mines, built a comprehensive compliance framework powered
-                      by AI technology, and forged strategic alliances with world-class
-                      refineries including IPMR.
+                      by ComplyAdvantage AI technology, and forged strategic alliances with
+                      world-class refineries including IPMR.
                     </p>
                     <p>
                       Timothy&apos;s focus on the intersection of precious metals and semiconductor
@@ -204,6 +221,17 @@ export default function AboutPage() {
                       supplier of ultra-high purity metals for chip wafer coating and
                       advanced electronics manufacturing.
                     </p>
+                  </div>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    <span className="inline-flex items-center gap-1.5 text-xs bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-full border border-emerald-200 font-medium">
+                      <ShieldCheck className="h-3 w-3" /> KYC/AML Verified
+                    </span>
+                    <span className="text-xs bg-slate-100 text-slate-600 px-3 py-1.5 rounded-full border border-slate-200 font-medium">
+                      Est. {SITE_CONFIG.established}
+                    </span>
+                    <span className="text-xs bg-amber-50 text-amber-700 px-3 py-1.5 rounded-full border border-amber-200 font-medium">
+                      $3B+ Closed Volume
+                    </span>
                   </div>
                 </div>
               </div>

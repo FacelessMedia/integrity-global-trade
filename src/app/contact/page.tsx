@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Mail, Phone, MapPin, Clock, Send, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, ArrowRight, Building, ShieldCheck, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -64,6 +64,40 @@ export default function ContactPage() {
               <div className="space-y-6 mb-10">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+                    <Building className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-slate-900 mb-1">Corporate Headquarters</h3>
+                    <a
+                      href="https://maps.google.com/?q=30+N+Gould+St+STE+R+Sheridan+Wyoming+82801"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-600 hover:text-amber-600 transition-colors text-sm"
+                    >
+                      {SITE_CONFIG.address.street} {SITE_CONFIG.address.suite}<br />
+                      {SITE_CONFIG.address.city}, {SITE_CONFIG.address.state} {SITE_CONFIG.address.zip}
+                    </a>
+                    <p className="text-xs text-slate-400 mt-1">Registered in the State of Wyoming, USA</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+                    <Phone className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-slate-900 mb-1">Phone</h3>
+                    <a
+                      href={`tel:${SITE_CONFIG.phoneRaw}`}
+                      className="text-amber-600 hover:text-amber-700 transition-colors font-medium"
+                    >
+                      {SITE_CONFIG.phone}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
@@ -79,27 +113,29 @@ export default function ContactPage() {
 
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
-                    <Phone className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-900 mb-1">Phone</h3>
-                    <a
-                      href={`tel:${SITE_CONFIG.phone}`}
-                      className="text-amber-600 hover:text-amber-700 transition-colors"
-                    >
-                      {SITE_CONFIG.phone}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
                     <Clock className="h-5 w-5" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900 mb-1">Business Hours</h3>
-                    <p className="text-slate-600 text-sm">Monday – Friday: 8:00 AM – 6:00 PM EST</p>
+                    <p className="text-slate-600 text-sm">Monday – Friday: 8:00 AM – 6:00 PM MST</p>
                     <p className="text-slate-500 text-sm">24/7 trading desk available for active clients</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-[#0A66C2]/10 text-[#0A66C2] flex items-center justify-center shrink-0">
+                    <Linkedin className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-slate-900 mb-1">Connect with Our Founder</h3>
+                    <a
+                      href={SITE_CONFIG.founderLinkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#0A66C2] hover:text-[#004182] transition-colors text-sm font-medium"
+                    >
+                      Timothy Mercer on LinkedIn
+                    </a>
                   </div>
                 </div>
               </div>

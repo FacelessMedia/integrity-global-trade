@@ -5,6 +5,7 @@ import { WhyChooseUsSection } from "@/components/sections/WhyChooseUsSection";
 import { ComplianceSection } from "@/components/sections/ComplianceSection";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { CTASection } from "@/components/sections/CTASection";
+import { OperationsShowcase } from "@/components/sections/OperationsShowcase";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <ServicesSection />
       <CommoditiesSection />
       <WhyChooseUsSection />
+      <OperationsShowcase />
       <ComplianceSection />
       <CTASection />
     </>

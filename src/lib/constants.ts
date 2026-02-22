@@ -3,12 +3,25 @@ export const SITE_CONFIG = {
   shortName: "Integrity Global Trade",
   abbreviation: "IGTC",
   description:
-    "A premier global commodities trading company specializing in precious metals, non-ferrous metals, and critical minerals for semiconductor manufacturing. Ethical sourcing from UN-certified mines with full KYC/AML compliance.",
+    "A premier global commodities trading company specializing in precious metals, non-ferrous metals, and critical minerals for semiconductor manufacturing. Over $3 billion in closed contract volume. Ethical sourcing from UN-certified mines with full KYC/AML compliance.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://integrityglobaltrade.com",
   founder: "Timothy Mercer",
   founderTitle: "Founder & CEO",
+  founderLinkedin: "https://www.linkedin.com/in/timothy-mercer-36197977/",
   email: "info@integrityglobaltrade.com",
-  phone: "+1 (555) 000-0000",
+  phone: "+1 (773) 219-7674",
+  phoneRaw: "7732197674",
+  address: {
+    street: "30 N. Gould St.",
+    suite: "STE R",
+    city: "Sheridan",
+    state: "Wyoming",
+    zip: "82801",
+    full: "30 N. Gould St. STE R, Sheridan, Wyoming 82801",
+  },
+  established: 2022,
+  yearsInBusiness: 4,
+  totalVolume: "$3B+",
 } as const;
 
 export const NAV_LINKS = [
@@ -189,10 +202,10 @@ export const COMMODITIES = [
 ] as const;
 
 export const STATS = [
+  { value: "$3B+", label: "Closed Contract Volume" },
+  { value: "4+", label: "Years in Operation" },
+  { value: "100%", label: "KYC/AML Compliance Rate" },
   { value: "50+", label: "Countries Served" },
-  { value: "$2B+", label: "Annual Trade Volume" },
-  { value: "100%", label: "KYC/AML Compliance" },
-  { value: "15+", label: "Years of Experience" },
 ] as const;
 
 export const COMPLIANCE_FEATURES = [
