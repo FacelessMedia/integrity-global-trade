@@ -1,8 +1,16 @@
 /**
- * Keyword Research Script for Integrity Global Trade & Commodities Corp
+ * COMPREHENSIVE Keyword Research & Competitor Analysis Script
+ * Integrity Global Trade & Commodities Corp
+ * 
+ * Executes the full SEO_KEYWORD_GAMEPLAN.md strategy:
+ *   Phase 1: SERP-based competitor discovery
+ *   Phase 2: Competitor keyword extraction (all 25 domains)
+ *   Phase 3: Keyword expansion via suggestions
+ *   Phase 4: Search volume + scoring for all keywords
+ *   Phase 5: Clustering and page mapping
+ *   Phase 6: Master ranking plan generation
  * 
  * Usage: npx tsx scripts/keyword-research.ts
- * 
  * Requires DATAFORSEO_LOGIN and DATAFORSEO_PASSWORD in .env.local
  */
 
@@ -11,46 +19,86 @@ import * as fs from "fs";
 import * as path from "path";
 import * as dotenv from "dotenv";
 
-// Load environment variables
 dotenv.config({ path: path.resolve(__dirname, "../.env.local") });
 
+// ============================================================
+// SEED KEYWORDS — 34 keywords across 4 tiers
+// ============================================================
 const SEED_KEYWORDS = [
-  // Primary keywords
+  // Tier 1: Core Business
   "precious metals trading company",
-  "global commodities trading",
-  "non-ferrous metals supplier",
   "gold trading company",
-  "metals refining services",
-  "commodity trading firm",
-  "precious metals for semiconductors",
-  "ethical metals sourcing",
-  "physical commodities trading",
-  "critical minerals supply chain",
-
-  // Secondary keywords
-  "gold refining services",
   "silver trading company",
-  "platinum palladium trading",
-  "copper supplier",
+  "commodity trading firm",
+  "physical commodities trading",
+  "global commodities trading",
+  "metals trading company",
+  "precious metals supplier",
+  "gold supplier wholesale",
+  "non-ferrous metals supplier",
+  // Tier 2: Service-Specific
+  "precious metals refining services",
+  "gold refining services",
   "metals supply chain management",
-  "KYC compliance metals trading",
-  "LBMA accredited trading",
-  "conflict-free minerals",
+  "commodity risk management",
   "precious metals procurement",
-  "metals for electronics manufacturing",
+  "metals for semiconductor manufacturing",
+  "gold plating chip wafers",
+  "critical minerals supplier",
+  "platinum palladium trading",
+  "copper trading company",
+  // Tier 3: Compliance & Trust
+  "KYC compliance metals trading",
+  "ethical metals sourcing",
+  "LBMA accredited trading",
+  "conflict-free minerals supplier",
+  "responsible precious metals procurement",
+  "UN certified mine sourcing",
+  "AML compliance commodities",
+  "chain of custody precious metals",
+  // Tier 4: Industry Application
+  "precious metals for electronics",
+  "gold for semiconductor industry",
+  "silver for solar panels",
+  "copper for electric vehicles",
+  "metals for renewable energy",
+  "catalytic converter metals supplier",
 ];
 
+// ============================================================
+// TOP 25 COMPETITOR DOMAINS — verified via web research
+// ============================================================
 const COMPETITOR_DOMAINS = [
+  // Direct competitors: Physical metals trading
   "gerald.com",
-  "globalcommoditiesholdings.com",
   "stonex.com",
-  "ipm.world",
-  "ectp.com",
-  "comtradingcorp.com",
-  "ksandt.com",
-  "intercomtraders.com",
   "trafigura.com",
   "glencore.com",
+  "ipm.world",
+  "integritytradegroup.com",
+  "intercomtraders.com",
+  "ectp.com",
+  "ksandt.com",
+  "comtradingcorp.com",
+  // Precious metals specialists
+  "kitco.com",
+  "jmbullion.com",
+  "apmex.com",
+  "dillongage.com",
+  "elemetal.com",
+  // Metals for industry / semiconductor
+  "heraeus-precious-metals.com",
+  "technic.com",
+  "metalor.com",
+  "mkspamp.com",
+  "asahirefining.com",
+  // Commodities platforms
+  "globalcommoditiesholdings.com",
+  // Mining/refining with trading arms
+  "ipmr.com",
+  "scginternational.com",
+  "blacklaketrading.com",
+  "mtbmetals.com",
 ];
 
 async function main() {
@@ -72,101 +120,184 @@ async function main() {
     fs.mkdirSync(outputDir, { recursive: true });
   }
 
-  console.log("🔍 Starting Keyword Research for Integrity Global Trade & Commodities Corp\n");
+  const save = (filename: string, data: unknown) => {
+    fs.writeFileSync(path.join(outputDir, filename), JSON.stringify(data, null, 2));
+  };
+  const delay = (ms = 800) => new Promise((r) => setTimeout(r, ms));
 
-  // Step 1: Get search volume for seed keywords
-  console.log("📊 Step 1: Fetching search volume for seed keywords...");
-  try {
-    const searchVolumeData = await client.getKeywordSearchVolume(SEED_KEYWORDS);
-    fs.writeFileSync(
-      path.join(outputDir, "keyword-search-volume.json"),
-      JSON.stringify(searchVolumeData, null, 2)
-    );
-    console.log(`   ✅ Got data for ${searchVolumeData.length} keywords`);
-  } catch (error) {
-    console.error("   ❌ Error fetching search volume:", error);
-  }
+  console.log("═══════════════════════════════════════════════════════════");
+  console.log("  INTEGRITY GLOBAL TRADE — FULL SEO RESEARCH PIPELINE");
+  console.log("═══════════════════════════════════════════════════════════\n");
 
-  // Step 2: Get keyword suggestions for top seed keywords
-  console.log("\n📊 Step 2: Fetching keyword suggestions...");
-  const allSuggestions: Record<string, unknown[]> = {};
-  for (const keyword of SEED_KEYWORDS.slice(0, 5)) {
-    try {
-      console.log(`   Fetching suggestions for: "${keyword}"`);
-      const suggestions = await client.getKeywordSuggestions(keyword);
-      allSuggestions[keyword] = suggestions;
-      console.log(`   ✅ Got ${suggestions.length} suggestions`);
-      // Rate limit courtesy
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-    } catch (error) {
-      console.error(`   ❌ Error for "${keyword}":`, error);
-    }
-  }
-  fs.writeFileSync(
-    path.join(outputDir, "keyword-suggestions.json"),
-    JSON.stringify(allSuggestions, null, 2)
-  );
-
-  // Step 3: Get SERP results for top keywords to identify competitors
-  console.log("\n📊 Step 3: Fetching SERP results for competitor identification...");
+  // ── PHASE 1: SERP competitor discovery ──────────────────────
+  console.log("▶ PHASE 1: SERP-based competitor discovery (34 seed keywords)...\n");
   const serpResults: Record<string, unknown[]> = {};
-  for (const keyword of SEED_KEYWORDS.slice(0, 10)) {
+  const serpDomainCount: Record<string, number> = {};
+  for (const keyword of SEED_KEYWORDS) {
     try {
-      console.log(`   Fetching SERP for: "${keyword}"`);
+      process.stdout.write(`   SERP: "${keyword}"...`);
       const results = await client.getSerpResults(keyword);
       serpResults[keyword] = results;
-      console.log(`   ✅ Got ${results.length} SERP results`);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // Count domain frequency
+      for (const r of results as Array<{ domain?: string }>) {
+        if (r.domain) {
+          const d = r.domain.replace(/^www\./, "");
+          serpDomainCount[d] = (serpDomainCount[d] || 0) + 1;
+        }
+      }
+      console.log(` ✅ ${results.length} results`);
+      await delay();
     } catch (error) {
-      console.error(`   ❌ Error for "${keyword}":`, error);
+      console.log(` ❌ Error`);
     }
   }
-  fs.writeFileSync(
-    path.join(outputDir, "serp-results.json"),
-    JSON.stringify(serpResults, null, 2)
-  );
+  save("01-serp-results.json", serpResults);
+  // Sort domains by frequency (most keyword overlap = strongest competitor)
+  const discoveredCompetitors = Object.entries(serpDomainCount)
+    .sort(([, a], [, b]) => b - a)
+    .slice(0, 50);
+  save("01-serp-discovered-competitors.json", discoveredCompetitors);
+  console.log(`\n   📊 Discovered ${discoveredCompetitors.length} competitor domains from SERPs`);
+  console.log(`   Top 10: ${discoveredCompetitors.slice(0, 10).map(([d, c]) => `${d}(${c})`).join(", ")}\n`);
 
-  // Step 4: Analyze competitor domains
-  console.log("\n📊 Step 4: Analyzing competitor domains...");
-  const competitorAnalysis: Record<string, unknown> = {};
-  for (const domain of COMPETITOR_DOMAINS) {
+  // ── PHASE 2: Competitor keyword extraction ──────────────────
+  // Merge our predefined list + SERP-discovered top domains
+  const allCompetitorDomains = [...new Set([
+    ...COMPETITOR_DOMAINS,
+    ...discoveredCompetitors.filter(([, c]) => c >= 3).map(([d]) => d),
+  ])];
+  console.log(`▶ PHASE 2: Extracting keywords from ${allCompetitorDomains.length} competitor domains...\n`);
+
+  const allCompetitorKeywords: Array<{
+    domain: string;
+    keyword: string;
+    position: number;
+    search_volume: number;
+    cpc: number;
+    url: string;
+  }> = [];
+
+  for (const domain of allCompetitorDomains) {
     try {
-      console.log(`   Analyzing: ${domain}`);
-      const keywords = await client.getCompetitorKeywords(domain, 2840, "en", 50);
-      competitorAnalysis[domain] = {
-        top_keywords: keywords,
-        keyword_count: keywords.length,
-      };
-      console.log(`   ✅ Got ${keywords.length} ranked keywords for ${domain}`);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      process.stdout.write(`   Ranked keywords: ${domain}...`);
+      const items = (await client.getCompetitorKeywords(domain, 2840, "en", 500)) as Array<{
+        keyword_data?: {
+          keyword?: string;
+          keyword_info?: { search_volume?: number; cpc?: number };
+        };
+        ranked_serp_element?: { serp_item?: { rank_absolute?: number; url?: string } };
+      }>;
+      for (const item of items) {
+        const kw = item.keyword_data?.keyword;
+        const vol = item.keyword_data?.keyword_info?.search_volume || 0;
+        const cpc = item.keyword_data?.keyword_info?.cpc || 0;
+        const pos = item.ranked_serp_element?.serp_item?.rank_absolute || 999;
+        const url = item.ranked_serp_element?.serp_item?.url || "";
+        if (kw) {
+          allCompetitorKeywords.push({ domain, keyword: kw, position: pos, search_volume: vol, cpc, url });
+        }
+      }
+      console.log(` ✅ ${items.length} keywords`);
+      await delay();
     } catch (error) {
-      console.error(`   ❌ Error for ${domain}:`, error);
+      console.log(` ❌ Error`);
     }
   }
-  fs.writeFileSync(
-    path.join(outputDir, "competitor-analysis.json"),
-    JSON.stringify(competitorAnalysis, null, 2)
-  );
+  save("02-competitor-keywords-raw.json", allCompetitorKeywords);
+  console.log(`\n   📊 Total raw keyword entries: ${allCompetitorKeywords.length}`);
 
-  // Step 5: Find competitor domains for our keywords
-  console.log("\n📊 Step 5: Finding competitor domains for our keywords...");
+  // Deduplicate and count frequency
+  const keywordMap: Record<string, {
+    keyword: string;
+    total_volume: number;
+    max_cpc: number;
+    competitor_count: number;
+    competitors: Array<{ domain: string; position: number }>;
+  }> = {};
+  for (const entry of allCompetitorKeywords) {
+    const key = entry.keyword.toLowerCase();
+    if (!keywordMap[key]) {
+      keywordMap[key] = { keyword: entry.keyword, total_volume: entry.search_volume, max_cpc: entry.cpc, competitor_count: 0, competitors: [] };
+    }
+    keywordMap[key].competitor_count += 1;
+    keywordMap[key].competitors.push({ domain: entry.domain, position: entry.position });
+    if (entry.cpc > keywordMap[key].max_cpc) keywordMap[key].max_cpc = entry.cpc;
+    if (entry.search_volume > keywordMap[key].total_volume) keywordMap[key].total_volume = entry.search_volume;
+  }
+  const deduplicatedKeywords = Object.values(keywordMap)
+    .sort((a, b) => b.competitor_count - a.competitor_count || b.total_volume - a.total_volume);
+  save("02-competitor-keywords-deduped.json", deduplicatedKeywords);
+  console.log(`   📊 Unique keywords after dedup: ${deduplicatedKeywords.length}\n`);
+
+  // ── PHASE 3: Keyword expansion ──────────────────────────────
+  console.log(`▶ PHASE 3: Expanding keywords via suggestions (top 15 seeds)...\n`);
+  const expansionKeywords = SEED_KEYWORDS.slice(0, 15);
+  const allSuggestions: Record<string, unknown[]> = {};
+  for (const keyword of expansionKeywords) {
+    try {
+      process.stdout.write(`   Suggestions: "${keyword}"...`);
+      const suggestions = await client.getKeywordSuggestions(keyword);
+      allSuggestions[keyword] = suggestions;
+      console.log(` ✅ ${suggestions.length} ideas`);
+      await delay();
+    } catch (error) {
+      console.log(` ❌ Error`);
+    }
+  }
+  save("03-keyword-suggestions.json", allSuggestions);
+
+  // ── PHASE 4: Search volume for all unique keywords ──────────
+  // Collect all unique keywords from phases 2 + 3
+  const allUniqueKeywords = new Set<string>(SEED_KEYWORDS.map(k => k.toLowerCase()));
+  for (const kw of deduplicatedKeywords) allUniqueKeywords.add(kw.keyword.toLowerCase());
+  for (const suggestions of Object.values(allSuggestions)) {
+    for (const s of suggestions as Array<{ keyword?: string }>) {
+      if (s.keyword) allUniqueKeywords.add(s.keyword.toLowerCase());
+    }
+  }
+  const uniqueKeywordList = [...allUniqueKeywords];
+  console.log(`\n▶ PHASE 4: Fetching search volume for ${uniqueKeywordList.length} unique keywords...\n`);
+
+  const volumeData: unknown[] = [];
+  // Process in batches of 700 (API limit is 1000 per request)
+  for (let i = 0; i < uniqueKeywordList.length; i += 700) {
+    const batch = uniqueKeywordList.slice(i, i + 700);
+    try {
+      process.stdout.write(`   Batch ${Math.floor(i / 700) + 1}/${Math.ceil(uniqueKeywordList.length / 700)} (${batch.length} keywords)...`);
+      const data = await client.getKeywordSearchVolume(batch);
+      volumeData.push(...data);
+      console.log(` ✅`);
+      await delay(1500);
+    } catch (error) {
+      console.log(` ❌ Error`);
+    }
+  }
+  save("04-search-volume-all.json", volumeData);
+  console.log(`   📊 Got volume data for ${volumeData.length} keywords\n`);
+
+  // ── PHASE 5: Find additional competitor domains via API ─────
+  console.log(`▶ PHASE 5: Discovering competitor domains via DataForSEO Labs...\n`);
   try {
-    const competitors = await client.getCompetitorsForKeywords(SEED_KEYWORDS.slice(0, 10));
-    fs.writeFileSync(
-      path.join(outputDir, "competitor-domains.json"),
-      JSON.stringify(competitors, null, 2)
-    );
-    console.log(`   ✅ Found ${competitors.length} competitor domains`);
+    const competitors = await client.getCompetitorsForKeywords(SEED_KEYWORDS.slice(0, 20));
+    save("05-api-competitor-domains.json", competitors);
+    console.log(`   ✅ Found ${competitors.length} competitor domains from API\n`);
   } catch (error) {
-    console.error("   ❌ Error finding competitors:", error);
+    console.log(`   ❌ Error finding competitor domains\n`);
   }
 
-  console.log("\n✅ Research complete! Results saved to /research-output/");
-  console.log("   - keyword-search-volume.json");
-  console.log("   - keyword-suggestions.json");
-  console.log("   - serp-results.json");
-  console.log("   - competitor-analysis.json");
-  console.log("   - competitor-domains.json");
+  // ── SUMMARY ─────────────────────────────────────────────────
+  console.log("═══════════════════════════════════════════════════════════");
+  console.log("  ✅ RESEARCH PIPELINE COMPLETE");
+  console.log("═══════════════════════════════════════════════════════════");
+  console.log(`  Files saved to: ${outputDir}/`);
+  console.log(`  01-serp-results.json                   — SERP data for all seed keywords`);
+  console.log(`  01-serp-discovered-competitors.json     — Competitor domains from SERPs`);
+  console.log(`  02-competitor-keywords-raw.json         — All keywords from ${allCompetitorDomains.length} competitors`);
+  console.log(`  02-competitor-keywords-deduped.json     — ${deduplicatedKeywords.length} unique keywords, scored`);
+  console.log(`  03-keyword-suggestions.json             — Expanded keyword suggestions`);
+  console.log(`  04-search-volume-all.json               — Volume data for ${volumeData.length} keywords`);
+  console.log(`  05-api-competitor-domains.json           — API-discovered competitors`);
+  console.log(`\n  Next: Run 'npx tsx scripts/generate-master-list.ts' to score & cluster`);
 }
 
 function generatePlaceholderReport() {
