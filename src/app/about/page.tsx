@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Globe, Shield, Award, Users, Target, Eye, Linkedin, MapPin, ShieldCheck } from "lucide-react";
 import { SITE_CONFIG, STATS } from "@/lib/constants";
 
@@ -180,9 +181,13 @@ export default function AboutPage() {
             <div className="bg-slate-50 rounded-2xl p-10 border border-slate-200">
               <div className="flex flex-col md:flex-row gap-8 items-start">
                 <div className="shrink-0">
-                  <div className="w-32 h-32 rounded-xl bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center mb-3">
-                    <span className="text-4xl font-bold text-amber-700">TM</span>
-                  </div>
+                  <Image
+                    src="/images/timothy-mercer.jpg"
+                    alt="Timothy Mercer - Founder & CEO of Integrity Global Trade & Commodities Corp"
+                    width={128}
+                    height={128}
+                    className="w-32 h-32 rounded-xl object-cover mb-3"
+                  />
                   <a
                     href={SITE_CONFIG.founderLinkedin}
                     target="_blank"

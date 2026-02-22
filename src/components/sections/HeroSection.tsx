@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Shield, Globe, Award, ShieldCheck, Phone, BadgeDollarSign, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SITE_CONFIG } from "@/lib/constants";
@@ -148,9 +149,13 @@ export function HeroSection() {
               {/* Founder */}
               <div className="bg-white/5 rounded-xl p-4 border border-white/5">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-200 to-amber-300 flex items-center justify-center shrink-0">
-                    <span className="text-amber-800 font-bold text-sm">TM</span>
-                  </div>
+                  <Image
+                    src="/images/timothy-mercer.jpg"
+                    alt="Timothy Mercer - Founder & CEO"
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 rounded-full object-cover shrink-0"
+                  />
                   <div className="flex-1">
                     <div className="text-white font-semibold text-sm">Timothy Mercer</div>
                     <div className="text-slate-400 text-xs">Founder & CEO</div>
