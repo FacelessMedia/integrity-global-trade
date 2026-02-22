@@ -65,7 +65,7 @@ export function Header() {
             {/* Real Logo */}
             <Link href="/" className="flex items-center shrink-0">
               <Image
-                src="/images/logo.jpg"
+                src="/images/logo.png"
                 alt="Integrity Global Trade and Commodities"
                 width={280}
                 height={60}
@@ -147,7 +147,7 @@ export function Header() {
                   <div className="flex flex-col gap-1 mt-8">
                     <div className="px-4 mb-6">
                       <Image
-                        src="/images/logo.jpg"
+                        src="/images/logo.png"
                         alt="Integrity Global Trade and Commodities"
                         width={200}
                         height={44}

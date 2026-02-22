@@ -69,7 +69,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <div className="mb-6">
               <Image
-                src="/images/logo.jpg"
+                src="/images/logo.png"
                 alt="Integrity Global Trade and Commodities"
                 width={220}
                 height={48}

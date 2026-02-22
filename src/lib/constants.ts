@@ -8,7 +8,7 @@ export const SITE_CONFIG = {
   founder: "Timothy Mercer",
   founderTitle: "Founder & CEO",
   founderLinkedin: "https://www.linkedin.com/in/timothy-mercer-36197977/",
-  email: "info@integrityglobaltrade.com",
+  email: "tim@integritygtc.com",
   phone: "+1 (773) 219-7674",
   phoneRaw: "7732197674",
   address: {
