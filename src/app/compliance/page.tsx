@@ -198,6 +198,28 @@ export default function CompliancePage() {
         </div>
       </section>
 
+      {/* Deep Dive Links */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">Explore Our Compliance Framework</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { title: "Due Diligence Process", description: "Our five-step OECD-aligned framework for verifying every counterparty and transaction.", href: "/compliance/due-diligence" },
+                { title: "Sanctions Screening", description: "AI-powered real-time screening against 200+ global sanctions lists via ComplyAdvantage.", href: "/compliance/sanctions-screening" },
+                { title: "Chain of Custody", description: "Full supply chain traceability from certified mine origin to final delivery.", href: "/compliance/chain-of-custody" },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} className="group bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition-all">
+                  <h3 className="font-bold text-slate-900 mb-2 group-hover:text-emerald-700 transition-colors">{link.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed mb-3">{link.description}</p>
+                  <span className="text-xs font-semibold text-emerald-600 inline-flex items-center gap-1">Learn More <ArrowRight className="h-3 w-3" /></span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 bg-slate-900">
         <div className="container mx-auto px-6 text-center">

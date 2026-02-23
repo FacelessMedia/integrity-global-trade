@@ -28,7 +28,9 @@ export default function NotFound() {
               { label: "Commodities We Trade", href: "/commodities" },
               { label: "About Us", href: "/about" },
               { label: "Compliance & Ethics", href: "/compliance" },
-              { label: "Industries We Serve", href: "/industries" },
+              { label: "Case Studies", href: "/case-studies" },
+              { label: "Why Choose IGTC", href: "/why-igtc" },
+              { label: "FAQ", href: "/faq" },
               { label: "Insights & News", href: "/insights" },
             ].map((link) => (
               <Link
