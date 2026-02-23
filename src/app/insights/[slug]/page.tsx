@@ -108,6 +108,36 @@ export default async function BlogPostPage({ params }: PageProps) {
               })}
             </article>
 
+            {/* Share Buttons — Item #19 */}
+            <div className="mt-12 flex items-center gap-4 pt-8 border-t border-slate-200">
+              <span className="text-sm font-semibold text-slate-500">Share:</span>
+              <a
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${SITE_CONFIG.url}/insights/${post.slug}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-medium bg-[#0A66C2] text-white px-3 py-1.5 rounded-lg hover:bg-[#004182] transition-colors"
+                aria-label="Share on LinkedIn"
+              >
+                LinkedIn
+              </a>
+              <a
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`${SITE_CONFIG.url}/insights/${post.slug}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-medium bg-slate-800 text-white px-3 py-1.5 rounded-lg hover:bg-slate-700 transition-colors"
+                aria-label="Share on X/Twitter"
+              >
+                X / Twitter
+              </a>
+              <a
+                href={`mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(`Read this article from Integrity Global Trade: ${SITE_CONFIG.url}/insights/${post.slug}`)}`}
+                className="inline-flex items-center gap-1.5 text-xs font-medium bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg hover:bg-slate-200 transition-colors border border-slate-200"
+                aria-label="Share via Email"
+              >
+                Email
+              </a>
+            </div>
+
             {/* Trust CTA */}
             <div className="mt-16 bg-slate-50 rounded-2xl p-8 border border-slate-200">
               <div className="flex items-start gap-4">
