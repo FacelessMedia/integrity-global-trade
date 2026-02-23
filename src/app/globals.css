@@ -123,4 +123,11 @@
   body {
     @apply bg-background text-foreground;
   }
+  *:focus-visible {
+    @apply ring-2 ring-amber-500 ring-offset-2 outline-none;
+  }
+  ::selection {
+    background-color: oklch(0.82 0.12 80);
+    color: oklch(0.2 0 0);
+  }
 }
