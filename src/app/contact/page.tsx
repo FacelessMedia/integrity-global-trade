@@ -302,6 +302,27 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      {/* Google Maps */}
+      <section className="bg-slate-50">
+        <div className="container mx-auto px-6 py-16">
+          <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">Our Location</h2>
+          <div className="rounded-xl overflow-hidden border border-slate-200 shadow-sm">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2833.1!2d-106.9561!3d44.7972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5335fabc2a66677f%3A0x8f85bd068d1afb8a!2s30%20N%20Gould%20St%2C%20Sheridan%2C%20WY%2082801!5e0!3m2!1sen!2sus!4v1"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Integrity Global Trade & Commodities Corp - Sheridan, Wyoming"
+            />
+          </div>
+          <p className="text-center text-sm text-slate-500 mt-4">
+            30 N. Gould St. STE R, Sheridan, Wyoming 82801 · Registered in the State of Wyoming, USA
+          </p>
+        </div>
+      </section>
     </>
   );
 }
