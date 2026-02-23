@@ -5,6 +5,8 @@ import { ArrowRight, ArrowLeft, CheckCircle } from "lucide-react";
 import { COMMODITIES, SERVICES, SITE_CONFIG } from "@/lib/constants";
 import { CommodityJsonLd, BreadcrumbJsonLd, FAQJsonLd } from "@/lib/structured-data";
 import { COMMODITY_FAQS } from "@/lib/faqs";
+import { COMMODITY_EXPANDED_CONTENT } from "@/lib/commodity-content";
+import { ShieldCheck } from "lucide-react";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -35,6 +37,7 @@ export default async function CommodityDetailPage({ params }: PageProps) {
   const commodityIndex = COMMODITIES.findIndex((c) => c.slug === slug);
   const nextCommodity = COMMODITIES[(commodityIndex + 1) % COMMODITIES.length];
   const prevCommodity = COMMODITIES[(commodityIndex - 1 + COMMODITIES.length) % COMMODITIES.length];
+  const expanded = COMMODITY_EXPANDED_CONTENT[slug];
 
   return (
     <>
@@ -122,6 +125,69 @@ export default async function CommodityDetailPage({ params }: PageProps) {
                 </p>
               </div>
             </div>
+
+            {/* Expanded Content — Items 6-10 */}
+            {expanded && (
+              <>
+                {/* Market Overview */}
+                <div className="mb-16">
+                  <h2 className="text-2xl font-bold text-slate-900 mb-6">Market Overview</h2>
+                  <div className="space-y-4 text-slate-600 leading-relaxed">
+                    {expanded.marketOverview.split("\n\n").map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Why Trade with IGTC */}
+                <div className="mb-16 bg-emerald-50 rounded-2xl p-8 border border-emerald-200">
+                  <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <ShieldCheck className="h-6 w-6 text-emerald-600" />
+                    Why Trade {commodity.title} with IGTC
+                  </h2>
+                  <div className="space-y-3">
+                    {expanded.whyIGTC.map((point, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
+                        <span className="text-slate-700">{point}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Supply Chain */}
+                <div className="mb-16">
+                  <h2 className="text-2xl font-bold text-slate-900 mb-6">Supply Chain & Delivery</h2>
+                  <p className="text-slate-600 leading-relaxed mb-6">{expanded.supplyChain}</p>
+                </div>
+
+                {/* Specifications Table */}
+                <div className="mb-16">
+                  <h2 className="text-2xl font-bold text-slate-900 mb-6">Trading Specifications</h2>
+                  <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+                    {expanded.specifications.map((spec, i) => (
+                      <div key={spec.label} className={`flex items-center justify-between px-6 py-4 ${i < expanded.specifications.length - 1 ? "border-b border-slate-100" : ""}`}>
+                        <span className="text-sm font-semibold text-slate-500">{spec.label}</span>
+                        <span className="text-sm text-slate-900 font-medium text-right">{spec.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Industry Applications (expanded) */}
+                <div className="mb-16">
+                  <h2 className="text-2xl font-bold text-slate-900 mb-8">Industry Applications</h2>
+                  <div className="space-y-4">
+                    {expanded.industryApplications.map((app) => (
+                      <div key={app.title} className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                        <h3 className="font-bold text-slate-900 mb-2">{app.title}</h3>
+                        <p className="text-sm text-slate-600 leading-relaxed">{app.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </>
+            )}
 
             {/* Quality Standards */}
             <div className="mb-16">
