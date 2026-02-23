@@ -2,15 +2,57 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-import { Menu, ChevronDown, Phone, Mail, MapPin, ShieldCheck, Linkedin } from "lucide-react";
+import { useState, useCallback, useEffect, useRef } from "react";
+import { Menu, X, ChevronDown, ChevronRight, ArrowLeft, Phone, Mail, MapPin, ShieldCheck, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
+type NavLink = (typeof NAV_LINKS)[number];
+
+function hasChildren(link: NavLink): link is NavLink & { children: ReadonlyArray<{ label: string; href: string }> } {
+  return "children" in link && Array.isArray((link as Record<string, unknown>).children);
+}
+
 export function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileSubmenu, setMobileSubmenu] = useState<string | null>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  const closeMobile = useCallback(() => {
+    setMobileOpen(false);
+    setMobileSubmenu(null);
+  }, []);
+
+  // Close mobile menu on route change (link click)
+  const handleMobileLink = useCallback(() => {
+    closeMobile();
+  }, [closeMobile]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
+
+  // Close on escape
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeMobile();
+    };
+    if (mobileOpen) document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [mobileOpen, closeMobile]);
+
+  // Find the active submenu data
+  const activeSubmenu = mobileSubmenu
+    ? NAV_LINKS.find((l) => l.label === mobileSubmenu)
+    : null;
 
   return (
     <>
@@ -62,7 +104,7 @@ export function Header() {
       <header className="sticky top-0 z-50 bg-white/98 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-20">
-            {/* Real Logo */}
+            {/* Logo */}
             <Link href="/" className="flex items-center shrink-0">
               <Image
                 src="/images/logo.png"
@@ -80,9 +122,7 @@ export function Header() {
                 <div
                   key={link.label}
                   className="relative"
-                  onMouseEnter={() =>
-                    "children" in link ? setOpenDropdown(link.label) : undefined
-                  }
+                  onMouseEnter={() => hasChildren(link) ? setOpenDropdown(link.label) : undefined}
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
                   <Link
@@ -93,7 +133,7 @@ export function Header() {
                     )}
                   >
                     {link.label}
-                    {"children" in link && (
+                    {hasChildren(link) && (
                       <ChevronDown
                         className={cn(
                           "h-3.5 w-3.5 transition-transform",
@@ -103,8 +143,8 @@ export function Header() {
                     )}
                   </Link>
 
-                  {"children" in link && openDropdown === link.label && (
-                    <div className="absolute top-full left-0 mt-0 w-72 bg-white rounded-lg shadow-2xl border border-slate-200 py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                  {hasChildren(link) && openDropdown === link.label && (
+                    <div className="absolute top-full left-0 mt-0 w-64 bg-white rounded-lg shadow-2xl border border-slate-200 py-2 animate-in fade-in slide-in-from-top-2 duration-200">
                       {link.children.map((child) => (
                         <Link
                           key={child.href}
@@ -120,7 +160,7 @@ export function Header() {
               ))}
             </nav>
 
-            {/* CTA + Mobile menu */}
+            {/* CTA + Mobile toggle */}
             <div className="flex items-center gap-3">
               <a
                 href={`tel:${SITE_CONFIG.phoneRaw}`}
@@ -136,66 +176,140 @@ export function Header() {
                 <Link href="/contact">Request Consultation</Link>
               </Button>
 
-              {/* Mobile menu */}
-              <Sheet>
-                <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="lg:hidden">
-                    <Menu className="h-6 w-6" />
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="right" className="w-80">
-                  <div className="flex flex-col gap-1 mt-8">
-                    <div className="px-4 mb-6">
-                      <Image
-                        src="/images/logo.png"
-                        alt="Integrity Global Trade and Commodities"
-                        width={200}
-                        height={44}
-                        className="h-10 w-auto"
-                      />
-                    </div>
-                    {NAV_LINKS.map((link) => (
-                      <div key={link.label}>
-                        <Link
-                          href={link.href}
-                          className="block px-4 py-3 text-base font-medium text-slate-800 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
-                        >
-                          {link.label}
-                        </Link>
-                        {"children" in link && (
-                          <div className="ml-4 border-l-2 border-slate-100 pl-4">
-                            {link.children.map((child) => (
-                              <Link
-                                key={child.href}
-                                href={child.href}
-                                className="block px-3 py-2 text-sm text-slate-500 hover:text-slate-900 transition-colors"
-                              >
-                                {child.label}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                    <div className="pt-4 px-4 space-y-3">
-                      <Button asChild className="w-full bg-slate-900 hover:bg-slate-800 font-semibold">
-                        <Link href="/contact">Request Consultation</Link>
-                      </Button>
-                      <a
-                        href={`tel:${SITE_CONFIG.phoneRaw}`}
-                        className="flex items-center justify-center gap-2 text-sm text-slate-600 font-medium"
-                      >
-                        <Phone className="h-4 w-4" />
-                        {SITE_CONFIG.phone}
-                      </a>
-                    </div>
-                  </div>
-                </SheetContent>
-              </Sheet>
+              {/* Mobile hamburger */}
+              <button
+                type="button"
+                onClick={() => setMobileOpen(true)}
+                className="lg:hidden p-2 rounded-md text-slate-700 hover:bg-slate-100 transition-colors"
+                aria-label="Open menu"
+              >
+                <Menu className="h-6 w-6" />
+              </button>
             </div>
           </div>
         </div>
       </header>
+
+      {/* ========= Mobile Menu Overlay ========= */}
+      {mobileOpen && (
+        <div className="fixed inset-0 z-[100] lg:hidden">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={closeMobile}
+            aria-hidden="true"
+          />
+
+          {/* Panel */}
+          <div
+            ref={menuRef}
+            className="absolute right-0 top-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl flex flex-col animate-in slide-in-from-right duration-250"
+          >
+            {/* Panel header */}
+            <div className="flex items-center justify-between p-4 border-b border-slate-100">
+              <Image
+                src="/images/logo.png"
+                alt="IGTC"
+                width={160}
+                height={36}
+                className="h-8 w-auto"
+              />
+              <button
+                type="button"
+                onClick={closeMobile}
+                className="p-2 rounded-md text-slate-500 hover:bg-slate-100 hover:text-slate-700 transition-colors"
+                aria-label="Close menu"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            {/* Scrollable nav content */}
+            <div className="flex-1 overflow-y-auto">
+              {/* Main level (no submenu active) */}
+              {!mobileSubmenu && (
+                <nav className="py-3" aria-label="Mobile navigation">
+                  {NAV_LINKS.map((link) => (
+                    <div key={link.label}>
+                      {hasChildren(link) ? (
+                        <button
+                          type="button"
+                          onClick={() => setMobileSubmenu(link.label)}
+                          className="flex items-center justify-between w-full px-5 py-3.5 text-base font-medium text-slate-800 hover:bg-slate-50 transition-colors"
+                        >
+                          <span>{link.label}</span>
+                          <ChevronRight className="h-4 w-4 text-slate-400" />
+                        </button>
+                      ) : (
+                        <Link
+                          href={link.href}
+                          onClick={handleMobileLink}
+                          className="flex items-center px-5 py-3.5 text-base font-medium text-slate-800 hover:bg-slate-50 transition-colors"
+                        >
+                          {link.label}
+                        </Link>
+                      )}
+                    </div>
+                  ))}
+                </nav>
+              )}
+
+              {/* Submenu level */}
+              {mobileSubmenu && activeSubmenu && hasChildren(activeSubmenu) && (
+                <div className="animate-in slide-in-from-right duration-200">
+                  {/* Back button */}
+                  <button
+                    type="button"
+                    onClick={() => setMobileSubmenu(null)}
+                    className="flex items-center gap-2 w-full px-5 py-3.5 text-sm font-semibold text-amber-600 hover:bg-amber-50 transition-colors border-b border-slate-100"
+                  >
+                    <ArrowLeft className="h-4 w-4" />
+                    Back
+                  </button>
+
+                  {/* Section title + "View all" link */}
+                  <Link
+                    href={activeSubmenu.href}
+                    onClick={handleMobileLink}
+                    className="flex items-center justify-between px-5 py-3.5 border-b border-slate-100 hover:bg-slate-50 transition-colors"
+                  >
+                    <span className="text-base font-bold text-slate-900">{activeSubmenu.label}</span>
+                    <span className="text-xs text-amber-600 font-semibold">View All</span>
+                  </Link>
+
+                  {/* Sub-page links */}
+                  <nav className="py-2">
+                    {activeSubmenu.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        onClick={handleMobileLink}
+                        className="block px-5 py-3 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors"
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </nav>
+                </div>
+              )}
+            </div>
+
+            {/* Bottom CTA */}
+            <div className="p-4 border-t border-slate-100 space-y-3">
+              <Button asChild className="w-full bg-slate-900 hover:bg-slate-800 font-semibold">
+                <Link href="/contact" onClick={handleMobileLink}>Request Consultation</Link>
+              </Button>
+              <a
+                href={`tel:${SITE_CONFIG.phoneRaw}`}
+                className="flex items-center justify-center gap-2 text-sm text-slate-600 font-medium py-1"
+              >
+                <Phone className="h-4 w-4" />
+                {SITE_CONFIG.phone}
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

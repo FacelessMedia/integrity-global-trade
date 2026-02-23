@@ -25,7 +25,6 @@ export const SITE_CONFIG = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: "Home", href: "/" },
   {
     label: "About",
     href: "/about",
@@ -66,9 +65,17 @@ export const NAV_LINKS = [
       { label: "Renewable Energy", href: "/industries/renewable-energy" },
     ],
   },
-  { label: "Compliance", href: "/compliance" },
-  { label: "Insights", href: "/insights" },
-  { label: "Market Outlook", href: "/market-outlook" },
+  {
+    label: "Resources",
+    href: "/insights",
+    children: [
+      { label: "Insights & Analysis", href: "/insights" },
+      { label: "Market Outlook 2026", href: "/market-outlook" },
+      { label: "Compliance", href: "/compliance" },
+      { label: "FAQ", href: "/faq" },
+      { label: "Glossary", href: "/glossary" },
+    ],
+  },
   { label: "Contact", href: "/contact" },
 ] as const;
 
