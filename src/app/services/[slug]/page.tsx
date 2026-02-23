@@ -5,6 +5,8 @@ import { ArrowRight, ArrowLeft, CheckCircle } from "lucide-react";
 import { SERVICES, COMMODITIES, SITE_CONFIG } from "@/lib/constants";
 import { ServiceJsonLd, BreadcrumbJsonLd, FAQJsonLd } from "@/lib/structured-data";
 import { SERVICE_FAQS } from "@/lib/faqs";
+import { SERVICE_EXPANDED_CONTENT } from "@/lib/service-content";
+import { ShieldCheck } from "lucide-react";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -35,6 +37,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   const serviceIndex = SERVICES.findIndex((s) => s.slug === slug);
   const nextService = SERVICES[(serviceIndex + 1) % SERVICES.length];
   const prevService = SERVICES[(serviceIndex - 1 + SERVICES.length) % SERVICES.length];
+  const expanded = SERVICE_EXPANDED_CONTENT[slug];
 
   return (
     <>
@@ -118,6 +121,68 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 </p>
               </div>
             </div>
+
+            {/* Expanded Content — Items 11-17 */}
+            {expanded && (
+              <>
+                {/* Overview */}
+                <div className="mb-16">
+                  <h2 className="text-2xl font-bold text-slate-900 mb-6">Service Overview</h2>
+                  <div className="space-y-4 text-slate-600 leading-relaxed">
+                    {expanded.overview.split("\n\n").map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Why IGTC */}
+                <div className="mb-16 bg-emerald-50 rounded-2xl p-8 border border-emerald-200">
+                  <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <ShieldCheck className="h-6 w-6 text-emerald-600" />
+                    Why Choose IGTC for {service.title}
+                  </h2>
+                  <div className="space-y-3">
+                    {expanded.whyIGTC.map((point, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
+                        <span className="text-slate-700">{point}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Process */}
+                <div className="mb-16">
+                  <h2 className="text-2xl font-bold text-slate-900 mb-8">Our Process</h2>
+                  <div className="space-y-6">
+                    {expanded.process.map((step, i) => (
+                      <div key={step.step} className="flex gap-5">
+                        <div className="w-10 h-10 rounded-full bg-amber-100 border-2 border-amber-400 flex items-center justify-center text-amber-700 font-bold text-sm shrink-0">
+                          {i + 1}
+                        </div>
+                        <div>
+                          <h3 className="font-bold text-slate-900 mb-1">{step.step}</h3>
+                          <p className="text-sm text-slate-600 leading-relaxed">{step.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Key Benefits */}
+                <div className="mb-16">
+                  <h2 className="text-2xl font-bold text-slate-900 mb-8">Key Benefits</h2>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {expanded.keyBenefits.map((benefit) => (
+                      <div key={benefit.title} className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                        <h3 className="font-bold text-slate-900 mb-2">{benefit.title}</h3>
+                        <p className="text-sm text-slate-600 leading-relaxed">{benefit.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </>
+            )}
 
             {/* Related Commodities — Item #9 */}
             <div className="mb-16">
