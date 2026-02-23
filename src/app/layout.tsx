@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { SITE_CONFIG } from "@/lib/constants";
 import { OrganizationJsonLd, LocalBusinessJsonLd, WebSiteJsonLd } from "@/lib/structured-data";
 import { ScrollToTop } from "@/components/common/ScrollToTop";
+import { MobileStickyBar } from "@/components/common/MobileStickyBar";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -82,6 +83,7 @@ export default function RootLayout({
         <main id="main-content">{children}</main>
         <Footer />
         <ScrollToTop />
+        <MobileStickyBar />
       </body>
     </html>
   );
