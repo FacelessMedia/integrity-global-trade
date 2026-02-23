@@ -245,6 +245,37 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Company Timeline — Item #87 */}
+      <section className="py-24 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <div className="text-amber-600 font-semibold text-sm uppercase tracking-wider mb-3">Our Journey</div>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Key Milestones</h2>
+          </div>
+          <div className="max-w-2xl mx-auto space-y-8">
+            {[
+              { year: "2022", title: "Company Founded", description: "Timothy Mercer establishes Integrity Global Trade & Commodities Corp in Sheridan, Wyoming with a mission to bring ethical, compliant commodities trading to global markets." },
+              { year: "2023", title: "IPMR Partnership Established", description: "Strategic partnership with International Precious Metals Refiners (IPMR) for state-of-the-art Miller Processing and LBMA Good Delivery standard refining." },
+              { year: "2023", title: "$1 Billion in Facilitated Volume", description: "Integrity Global Trade surpasses $1 billion in closed contract volume and facilitation within the first 18 months of operations." },
+              { year: "2024", title: "ComplyAdvantage AI Integration", description: "Implementation of ComplyAdvantage AI-powered sanctions screening and real-time KYC/AML compliance technology across all operations." },
+              { year: "2025", title: "$3 Billion Milestone", description: "Company surpasses $3 billion in total closed contract volume and facilitation, serving clients across 50+ countries worldwide." },
+              { year: "2026", title: "Continued Growth", description: "Expanding semiconductor metals supply capabilities and deepening relationships with UN-certified mining operations globally." },
+            ].map((milestone, idx) => (
+              <div key={idx} className="flex gap-6 items-start">
+                <div className="shrink-0 w-16 text-right">
+                  <span className="text-sm font-bold text-amber-600">{milestone.year}</span>
+                </div>
+                <div className="w-3 h-3 rounded-full bg-amber-500 mt-1.5 shrink-0 ring-4 ring-amber-100" />
+                <div className="pb-2">
+                  <h3 className="font-bold text-slate-900 mb-1">{milestone.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{milestone.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 bg-slate-900">
         <div className="container mx-auto px-6 text-center">
