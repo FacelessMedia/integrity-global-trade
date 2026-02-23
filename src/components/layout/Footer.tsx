@@ -20,11 +20,22 @@ const footerLinks = {
     { label: "Copper (Cu)", href: "/commodities/copper" },
     { label: "Critical Minerals", href: "/commodities/critical-minerals" },
   ],
+  industries: [
+    { label: "Semiconductor & Electronics", href: "/industries/semiconductors" },
+    { label: "Automotive", href: "/industries/automotive" },
+    { label: "Aerospace & Defense", href: "/industries/aerospace" },
+    { label: "Jewelry & Luxury", href: "/industries/jewelry" },
+    { label: "Industrial Manufacturing", href: "/industries/industrial" },
+    { label: "Renewable Energy", href: "/industries/renewable-energy" },
+  ],
   company: [
     { label: "About Us", href: "/about" },
+    { label: "Industries We Serve", href: "/industries" },
     { label: "Compliance & Ethics", href: "/compliance" },
     { label: "Insights & News", href: "/insights" },
     { label: "Contact", href: "/contact" },
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Service", href: "/terms" },
   ],
 };
 
