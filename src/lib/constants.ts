@@ -54,6 +54,18 @@ export const NAV_LINKS = [
       { label: "Critical Minerals", href: "/commodities/critical-minerals" },
     ],
   },
+  {
+    label: "Industries",
+    href: "/industries",
+    children: [
+      { label: "Semiconductor & Electronics", href: "/industries/semiconductors" },
+      { label: "Automotive", href: "/industries/automotive" },
+      { label: "Aerospace & Defense", href: "/industries/aerospace" },
+      { label: "Jewelry & Luxury", href: "/industries/jewelry" },
+      { label: "Industrial Manufacturing", href: "/industries/industrial" },
+      { label: "Renewable Energy", href: "/industries/renewable-energy" },
+    ],
+  },
   { label: "Compliance", href: "/compliance" },
   { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
