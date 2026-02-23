@@ -173,6 +173,16 @@ export default async function CommodityDetailPage({ params }: PageProps) {
               </div>
             )}
 
+            {/* Price Disclaimer — Item #85 */}
+            <div className="mb-16 bg-amber-50 rounded-xl p-5 border border-amber-200">
+              <p className="text-xs text-amber-800 leading-relaxed">
+                <strong>Disclaimer:</strong> Commodity prices are subject to market conditions and may fluctuate significantly.
+                Any price information referenced on this page is for informational purposes only and does not constitute
+                an offer to buy or sell at any specific price. Actual trading prices are determined at the time of
+                transaction execution. Contact our trading desk for current pricing.
+              </p>
+            </div>
+
             {/* CTA */}
             <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-10 text-center">
               <h2 className="text-2xl font-bold text-white mb-4">
