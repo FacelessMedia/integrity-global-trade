@@ -176,6 +176,11 @@ html {
   }
 }
 
+/* CSS containment for layout performance */
+section {
+  contain: layout style;
+}
+
 @media print {
   header, footer, nav, .fixed, [data-radix-scroll-area-viewport] {
     display: none !important;
