@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import { STATS } from "@/lib/constants";
 
 function useInView(ref: React.RefObject<HTMLElement | null>) {
@@ -17,19 +17,27 @@ function useInView(ref: React.RefObject<HTMLElement | null>) {
   return inView;
 }
 
+function parseValue(value: string) {
+  const match = value.match(/^(\$)?([\d,.]+)(.*)/);
+  if (!match) return null;
+  return {
+    prefix: match[1] || "",
+    target: parseFloat(match[2].replace(/,/g, "")),
+    suffix: match[3] || "",
+  };
+}
+
 function AnimatedValue({ value, inView }: { value: string; inView: boolean }) {
-  const [display, setDisplay] = useState("0");
-  const numericMatch = value.match(/^[\$]?([\d,.]+)/);
-  const prefix = value.startsWith("$") ? "$" : "";
-  const suffix = value.replace(/^[\$]?[\d,.]+/, "");
+  const parsed = useMemo(() => parseValue(value), [value]);
+  const [display, setDisplay] = useState(parsed ? `${parsed.prefix}0${parsed.suffix}` : value);
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
-    if (!inView || !numericMatch) {
-      setDisplay(value);
-      return;
-    }
-    const target = parseFloat(numericMatch[1].replace(/,/g, ""));
-    const duration = 1500;
+    if (!inView || !parsed || hasAnimated.current) return;
+    hasAnimated.current = true;
+
+    const { prefix, target, suffix } = parsed;
+    const duration = 1800;
     const start = performance.now();
 
     function tick(now: number) {
@@ -47,9 +55,8 @@ function AnimatedValue({ value, inView }: { value: string; inView: boolean }) {
       if (progress < 1) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
-  }, [inView, value, numericMatch, prefix, suffix]);
+  }, [inView, parsed]);
 
-  if (!numericMatch) return <span>{inView ? value : "0"}</span>;
   return <span>{display}</span>;
 }
 
