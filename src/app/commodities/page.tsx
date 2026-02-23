@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { COMMODITIES, SITE_CONFIG } from "@/lib/constants";
+import { BreadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "Commodities We Trade",
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function CommoditiesPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Home", href: "/" }, { name: "Commodities", href: "/commodities" }]} />
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-900/15 via-transparent to-transparent" />

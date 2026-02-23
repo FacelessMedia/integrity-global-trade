@@ -2,11 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Gem, Layers, Atom, Cpu, Factory, Truck, ShieldCheck } from "lucide-react";
 import { SERVICES, SITE_CONFIG } from "@/lib/constants";
+import { BreadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "Services",
   description: `Explore ${SITE_CONFIG.shortName}'s comprehensive commodities trading services including precious metals trading, non-ferrous metals supply, critical minerals sourcing, semiconductor metals, refining, supply chain management, and risk management.`,
 };
+
+function BreadcrumbWrapper() {
+  return <BreadcrumbJsonLd items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }]} />;
+}
 
 const iconMap: Record<string, React.ReactNode> = {
   gem: <Gem className="h-8 w-8" />,
@@ -21,6 +26,7 @@ const iconMap: Record<string, React.ReactNode> = {
 export default function ServicesPage() {
   return (
     <>
+      <BreadcrumbWrapper />
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-900/15 via-transparent to-transparent" />

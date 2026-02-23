@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Globe, Shield, Award, Users, Target, Eye, Linkedin, MapPin, ShieldCheck } from "lucide-react";
 import { SITE_CONFIG, STATS } from "@/lib/constants";
+import { BreadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -12,6 +13,10 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[
+        { name: "Home", href: "/" },
+        { name: "About Us", href: "/about" },
+      ]} />
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-900/15 via-transparent to-transparent" />
