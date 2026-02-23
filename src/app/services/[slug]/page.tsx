@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, ArrowLeft, CheckCircle } from "lucide-react";
 import { SERVICES, SITE_CONFIG } from "@/lib/constants";
+import { ServiceJsonLd, BreadcrumbJsonLd } from "@/lib/structured-data";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -36,6 +37,12 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
   return (
     <>
+      <ServiceJsonLd service={service} />
+      <BreadcrumbJsonLd items={[
+        { name: "Home", href: "/" },
+        { name: "Services", href: "/services" },
+        { name: service.title, href: `/services/${service.slug}` },
+      ]} />
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-900/15 via-transparent to-transparent" />

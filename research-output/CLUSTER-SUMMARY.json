@@ -1,0 +1,1035 @@
+{
+  "Gold Trading & Supply": {
+    "count": 516,
+    "total_volume": 15230570,
+    "avg_score": 78,
+    "top_keywords": [
+      {
+        "keyword": "gold price future",
+        "volume": 60500,
+        "score": 98
+      },
+      {
+        "keyword": "gold spot price kitco",
+        "volume": 22200,
+        "score": 98
+      },
+      {
+        "keyword": "kitco gold spot",
+        "volume": 22200,
+        "score": 98
+      },
+      {
+        "keyword": "kitco gold spot price",
+        "volume": 22200,
+        "score": 98
+      },
+      {
+        "keyword": "gold dealers",
+        "volume": 14800,
+        "score": 98
+      },
+      {
+        "keyword": "gold price kitco",
+        "volume": 12100,
+        "score": 98
+      },
+      {
+        "keyword": "gold bullion products",
+        "volume": 1000,
+        "score": 95
+      },
+      {
+        "keyword": "kitco live gold price",
+        "volume": 9900,
+        "score": 93
+      },
+      {
+        "keyword": "physical gold bullion",
+        "volume": 1900,
+        "score": 93
+      },
+      {
+        "keyword": "gold bullion dealers",
+        "volume": 1300,
+        "score": 93
+      }
+    ],
+    "target_url": "/commodities/gold",
+    "wave_distribution": {
+      "Wave 1": 259,
+      "Wave 2": 132,
+      "Wave 3": 51,
+      "Wave 4": 74
+    }
+  },
+  "Precious Metals Trading": {
+    "count": 11,
+    "total_volume": 48590,
+    "avg_score": 87,
+    "top_keywords": [
+      {
+        "keyword": "precious metals dealers",
+        "volume": 22200,
+        "score": 95
+      },
+      {
+        "keyword": "precious metals companies",
+        "volume": 1300,
+        "score": 95
+      },
+      {
+        "keyword": "precious metals company",
+        "volume": 1300,
+        "score": 92
+      },
+      {
+        "keyword": "online precious metals dealers",
+        "volume": 9900,
+        "score": 90
+      },
+      {
+        "keyword": "precious metals dealers online",
+        "volume": 9900,
+        "score": 90
+      },
+      {
+        "keyword": "precious metal trade",
+        "volume": 320,
+        "score": 88
+      },
+      {
+        "keyword": "precious metals dealers near me",
+        "volume": 1300,
+        "score": 86
+      },
+      {
+        "keyword": "precious metal trading platform",
+        "volume": 210,
+        "score": 85
+      },
+      {
+        "keyword": "precious metals broker",
+        "volume": 720,
+        "score": 80
+      },
+      {
+        "keyword": "precious metals brokers",
+        "volume": 720,
+        "score": 80
+      }
+    ],
+    "target_url": "/services/precious-metals-trading",
+    "wave_distribution": {
+      "Wave 1": 6,
+      "Wave 2": 2,
+      "Wave 3": 3,
+      "Wave 4": 0
+    }
+  },
+  "Silver Trading & Supply": {
+    "count": 245,
+    "total_volume": 19704990,
+    "avg_score": 75,
+    "top_keywords": [
+      {
+        "keyword": "gold and silver traders",
+        "volume": 1900,
+        "score": 95
+      },
+      {
+        "keyword": "gold silver traders",
+        "volume": 1900,
+        "score": 95
+      },
+      {
+        "keyword": "kitco silver spot",
+        "volume": 33100,
+        "score": 91
+      },
+      {
+        "keyword": "silver spot price kitco",
+        "volume": 33100,
+        "score": 91
+      },
+      {
+        "keyword": "kitco silver spot price",
+        "volume": 33100,
+        "score": 91
+      },
+      {
+        "keyword": "comex silver price",
+        "volume": 14800,
+        "score": 91
+      },
+      {
+        "keyword": "silver price kitco",
+        "volume": 12100,
+        "score": 91
+      },
+      {
+        "keyword": "silver prices kitco",
+        "volume": 12100,
+        "score": 91
+      },
+      {
+        "keyword": "silver price today kitco",
+        "volume": 74000,
+        "score": 88
+      },
+      {
+        "keyword": "kitco silver price",
+        "volume": 74000,
+        "score": 86
+      }
+    ],
+    "target_url": "/commodities/silver",
+    "wave_distribution": {
+      "Wave 1": 134,
+      "Wave 2": 44,
+      "Wave 3": 3,
+      "Wave 4": 64
+    }
+  },
+  "Metals Refining & Processing": {
+    "count": 229,
+    "total_volume": 693010,
+    "avg_score": 71,
+    "top_keywords": [
+      {
+        "keyword": "gold refinery of san diego",
+        "volume": 1000,
+        "score": 93
+      },
+      {
+        "keyword": "refined dental",
+        "volume": 2400,
+        "score": 93
+      },
+      {
+        "keyword": "gold refiners",
+        "volume": 2400,
+        "score": 90
+      },
+      {
+        "keyword": "dental gold refiners",
+        "volume": 260,
+        "score": 90
+      },
+      {
+        "keyword": "dental gold refinery",
+        "volume": 260,
+        "score": 90
+      },
+      {
+        "keyword": "hi-tech precious metals refinery",
+        "volume": 480,
+        "score": 88
+      },
+      {
+        "keyword": "hi-tech refinery",
+        "volume": 320,
+        "score": 88
+      },
+      {
+        "keyword": "gold refining services",
+        "volume": 140,
+        "score": 88
+      },
+      {
+        "keyword": "hi tech precious metal refinery",
+        "volume": 480,
+        "score": 88
+      },
+      {
+        "keyword": "kitco refining",
+        "volume": 320,
+        "score": 88
+      }
+    ],
+    "target_url": "/services/refining-processing",
+    "wave_distribution": {
+      "Wave 1": 86,
+      "Wave 2": 131,
+      "Wave 3": 5,
+      "Wave 4": 7
+    }
+  },
+  "Supply Chain & Logistics": {
+    "count": 104,
+    "total_volume": 78050,
+    "avg_score": 61,
+    "top_keywords": [
+      {
+        "keyword": "supply chain supplier",
+        "volume": 27100,
+        "score": 93
+      },
+      {
+        "keyword": "supply chain managed services",
+        "volume": 1000,
+        "score": 88
+      },
+      {
+        "keyword": "supply chain management service",
+        "volume": 1000,
+        "score": 88
+      },
+      {
+        "keyword": "supply chain management services",
+        "volume": 1000,
+        "score": 88
+      },
+      {
+        "keyword": "koch logistics",
+        "volume": 1000,
+        "score": 86
+      },
+      {
+        "keyword": "supply chain management company",
+        "volume": 390,
+        "score": 83
+      },
+      {
+        "keyword": "b2b supply chain",
+        "volume": 140,
+        "score": 83
+      },
+      {
+        "keyword": "supply chain management b2b",
+        "volume": 140,
+        "score": 83
+      },
+      {
+        "keyword": "world wide logistics group",
+        "volume": 480,
+        "score": 81
+      },
+      {
+        "keyword": "industrial supply chain",
+        "volume": 390,
+        "score": 81
+      }
+    ],
+    "target_url": "/services/supply-chain",
+    "wave_distribution": {
+      "Wave 1": 34,
+      "Wave 2": 70,
+      "Wave 3": 0,
+      "Wave 4": 0
+    }
+  },
+  "Commodities Trading (General)": {
+    "count": 199,
+    "total_volume": 401770,
+    "avg_score": 65,
+    "top_keywords": [
+      {
+        "keyword": "bloomberg commodity",
+        "volume": 14800,
+        "score": 93
+      },
+      {
+        "keyword": "commodities brokers",
+        "volume": 1900,
+        "score": 88
+      },
+      {
+        "keyword": "commodities trading",
+        "volume": 6600,
+        "score": 83
+      },
+      {
+        "keyword": "trading commodities",
+        "volume": 1000,
+        "score": 83
+      },
+      {
+        "keyword": "big commodity trading companies",
+        "volume": 110,
+        "score": 83
+      },
+      {
+        "keyword": "top commodity trading firms",
+        "volume": 110,
+        "score": 83
+      },
+      {
+        "keyword": "top commodities trading firms",
+        "volume": 110,
+        "score": 83
+      },
+      {
+        "keyword": "commodities market trading",
+        "volume": 6600,
+        "score": 83
+      },
+      {
+        "keyword": "commodities to trade",
+        "volume": 6600,
+        "score": 83
+      },
+      {
+        "keyword": "commodity trading",
+        "volume": 6600,
+        "score": 83
+      }
+    ],
+    "target_url": "/",
+    "wave_distribution": {
+      "Wave 1": 97,
+      "Wave 2": 101,
+      "Wave 3": 0,
+      "Wave 4": 1
+    }
+  },
+  "Risk Management & Hedging": {
+    "count": 87,
+    "total_volume": 15802800,
+    "avg_score": 83,
+    "top_keywords": [
+      {
+        "keyword": "dow futures",
+        "volume": 1220000,
+        "score": 91
+      },
+      {
+        "keyword": "s & p 500 index futures",
+        "volume": 246000,
+        "score": 91
+      },
+      {
+        "keyword": "snp500 futures",
+        "volume": 246000,
+        "score": 91
+      },
+      {
+        "keyword": "sp 500 index futures",
+        "volume": 246000,
+        "score": 91
+      },
+      {
+        "keyword": "sp500 futures",
+        "volume": 246000,
+        "score": 91
+      },
+      {
+        "keyword": "sp500 index futures",
+        "volume": 246000,
+        "score": 91
+      },
+      {
+        "keyword": "spx 500 futures",
+        "volume": 246000,
+        "score": 91
+      },
+      {
+        "keyword": "spx futures",
+        "volume": 246000,
+        "score": 91
+      },
+      {
+        "keyword": "gold futures",
+        "volume": 246000,
+        "score": 91
+      },
+      {
+        "keyword": "gold futures price",
+        "volume": 60500,
+        "score": 91
+      }
+    ],
+    "target_url": "/services/risk-management",
+    "wave_distribution": {
+      "Wave 1": 72,
+      "Wave 2": 15,
+      "Wave 3": 0,
+      "Wave 4": 0
+    }
+  },
+  "Platinum & Palladium (PGM)": {
+    "count": 255,
+    "total_volume": 1457320,
+    "avg_score": 69,
+    "top_keywords": [
+      {
+        "keyword": "amex platinum metal card",
+        "volume": 74000,
+        "score": 91
+      },
+      {
+        "keyword": "futures platinum",
+        "volume": 9900,
+        "score": 86
+      },
+      {
+        "keyword": "platinum futures",
+        "volume": 9900,
+        "score": 86
+      },
+      {
+        "keyword": "cost of iridium",
+        "volume": 2400,
+        "score": 86
+      },
+      {
+        "keyword": "iridium cost",
+        "volume": 2400,
+        "score": 86
+      },
+      {
+        "keyword": "iridium element price",
+        "volume": 2400,
+        "score": 86
+      },
+      {
+        "keyword": "iridium metal price",
+        "volume": 2400,
+        "score": 86
+      },
+      {
+        "keyword": "iridium metal prices",
+        "volume": 2400,
+        "score": 86
+      },
+      {
+        "keyword": "iridium price",
+        "volume": 2400,
+        "score": 86
+      },
+      {
+        "keyword": "iridium prices",
+        "volume": 2400,
+        "score": 86
+      }
+    ],
+    "target_url": "/commodities/platinum-palladium",
+    "wave_distribution": {
+      "Wave 1": 189,
+      "Wave 2": 46,
+      "Wave 3": 6,
+      "Wave 4": 14
+    }
+  },
+  "Non-Ferrous Metals": {
+    "count": 104,
+    "total_volume": 988750,
+    "avg_score": 71,
+    "top_keywords": [
+      {
+        "keyword": "electroless nickel plating",
+        "volume": 2400,
+        "score": 90
+      },
+      {
+        "keyword": "nickel plating electroless",
+        "volume": 2400,
+        "score": 90
+      },
+      {
+        "keyword": "aluminium smelters in usa",
+        "volume": 320,
+        "score": 88
+      },
+      {
+        "keyword": "aluminum smelters usa",
+        "volume": 320,
+        "score": 88
+      },
+      {
+        "keyword": "alumina commodity price",
+        "volume": 210,
+        "score": 88
+      },
+      {
+        "keyword": "nickel mines",
+        "volume": 8100,
+        "score": 86
+      },
+      {
+        "keyword": "nickel mining",
+        "volume": 8100,
+        "score": 86
+      },
+      {
+        "keyword": "west nickel mines",
+        "volume": 8100,
+        "score": 86
+      },
+      {
+        "keyword": "nickel-plated",
+        "volume": 3600,
+        "score": 86
+      },
+      {
+        "keyword": "nickel plate station",
+        "volume": 1300,
+        "score": 86
+      }
+    ],
+    "target_url": "/services/non-ferrous-metals",
+    "wave_distribution": {
+      "Wave 1": 38,
+      "Wave 2": 59,
+      "Wave 3": 1,
+      "Wave 4": 6
+    }
+  },
+  "Critical Minerals & Rare Earths": {
+    "count": 61,
+    "total_volume": 745940,
+    "avg_score": 70,
+    "top_keywords": [
+      {
+        "keyword": "cobalt mines congo",
+        "volume": 1300,
+        "score": 88
+      },
+      {
+        "keyword": "cobalt mining congo",
+        "volume": 1300,
+        "score": 88
+      },
+      {
+        "keyword": "cobalt mining in the congo",
+        "volume": 1300,
+        "score": 88
+      },
+      {
+        "keyword": "cobalt mine",
+        "volume": 6600,
+        "score": 86
+      },
+      {
+        "keyword": "cobalt mines",
+        "volume": 6600,
+        "score": 86
+      },
+      {
+        "keyword": "cobalt mining",
+        "volume": 6600,
+        "score": 86
+      },
+      {
+        "keyword": "definition of tungsten",
+        "volume": 40500,
+        "score": 84
+      },
+      {
+        "keyword": "meaning of tungsten",
+        "volume": 40500,
+        "score": 84
+      },
+      {
+        "keyword": "tantalum",
+        "volume": 27100,
+        "score": 84
+      },
+      {
+        "keyword": "lithium ion battery recycling",
+        "volume": 6600,
+        "score": 83
+      }
+    ],
+    "target_url": "/services/critical-minerals",
+    "wave_distribution": {
+      "Wave 1": 33,
+      "Wave 2": 25,
+      "Wave 3": 0,
+      "Wave 4": 3
+    }
+  },
+  "Semiconductor Metals": {
+    "count": 3,
+    "total_volume": 2480,
+    "avg_score": 80,
+    "top_keywords": [
+      {
+        "keyword": "semiconductor equipment",
+        "volume": 590,
+        "score": 88
+      },
+      {
+        "keyword": "semiconductor equipment supplier",
+        "volume": 1300,
+        "score": 86
+      },
+      {
+        "keyword": "elevate semiconductor",
+        "volume": 590,
+        "score": 67
+      }
+    ],
+    "target_url": "/services/semiconductor-metals",
+    "wave_distribution": {
+      "Wave 1": 3,
+      "Wave 2": 0,
+      "Wave 3": 0,
+      "Wave 4": 0
+    }
+  },
+  "Market Data & Prices": {
+    "count": 41,
+    "total_volume": 3854490,
+    "avg_score": 64,
+    "top_keywords": [
+      {
+        "keyword": "spot price gold kitco",
+        "volume": 22200,
+        "score": 83
+      },
+      {
+        "keyword": "oil price today",
+        "volume": 246000,
+        "score": 76
+      },
+      {
+        "keyword": "kitco spot price of silver",
+        "volume": 33100,
+        "score": 76
+      },
+      {
+        "keyword": "crude oil price today",
+        "volume": 40500,
+        "score": 76
+      },
+      {
+        "keyword": "what's crude oil price today",
+        "volume": 40500,
+        "score": 76
+      },
+      {
+        "keyword": "gold 18k price per gram",
+        "volume": 33100,
+        "score": 76
+      },
+      {
+        "keyword": "cu price today",
+        "volume": 90500,
+        "score": 69
+      },
+      {
+        "keyword": "spot price gold",
+        "volume": 12100,
+        "score": 69
+      },
+      {
+        "keyword": "price per gold per ounce",
+        "volume": 12100,
+        "score": 69
+      },
+      {
+        "keyword": "gold rate price chart",
+        "volume": 201000,
+        "score": 66
+      }
+    ],
+    "target_url": "/insights",
+    "wave_distribution": {
+      "Wave 1": 39,
+      "Wave 2": 2,
+      "Wave 3": 0,
+      "Wave 4": 0
+    }
+  },
+  "Other": {
+    "count": 7367,
+    "total_volume": 10110829990,
+    "avg_score": 55,
+    "top_keywords": [
+      {
+        "keyword": "tiktok",
+        "volume": 11100000,
+        "score": 80
+      },
+      {
+        "keyword": "managem",
+        "volume": 246000,
+        "score": 80
+      },
+      {
+        "keyword": "agricultural",
+        "volume": 165000,
+        "score": 80
+      },
+      {
+        "keyword": "cpi",
+        "volume": 110000,
+        "score": 80
+      },
+      {
+        "keyword": "country financial",
+        "volume": 90500,
+        "score": 80
+      },
+      {
+        "keyword": "dealer daily",
+        "volume": 90500,
+        "score": 80
+      },
+      {
+        "keyword": "stru",
+        "volume": 74000,
+        "score": 80
+      },
+      {
+        "keyword": "usd eur",
+        "volume": 74000,
+        "score": 80
+      },
+      {
+        "keyword": "consulting finance",
+        "volume": 33100,
+        "score": 80
+      },
+      {
+        "keyword": "consulting financial",
+        "volume": 33100,
+        "score": 80
+      }
+    ],
+    "target_url": "/insights",
+    "wave_distribution": {
+      "Wave 1": 3548,
+      "Wave 2": 3268,
+      "Wave 3": 158,
+      "Wave 4": 393
+    }
+  },
+  "Copper Trading": {
+    "count": 14,
+    "total_volume": 891400,
+    "avg_score": 74,
+    "top_keywords": [
+      {
+        "keyword": "copper market prices today",
+        "volume": 90500,
+        "score": 77
+      },
+      {
+        "keyword": "copper price as of today",
+        "volume": 90500,
+        "score": 77
+      },
+      {
+        "keyword": "copper price today",
+        "volume": 90500,
+        "score": 77
+      },
+      {
+        "keyword": "copper prices today",
+        "volume": 90500,
+        "score": 77
+      },
+      {
+        "keyword": "copper price by pound",
+        "volume": 49500,
+        "score": 77
+      },
+      {
+        "keyword": "copper price per lb",
+        "volume": 49500,
+        "score": 77
+      },
+      {
+        "keyword": "copper price per pound",
+        "volume": 49500,
+        "score": 77
+      },
+      {
+        "keyword": "copper prices per pound",
+        "volume": 49500,
+        "score": 77
+      },
+      {
+        "keyword": "copper price",
+        "volume": 165000,
+        "score": 74
+      },
+      {
+        "keyword": "copper prices",
+        "volume": 165000,
+        "score": 74
+      }
+    ],
+    "target_url": "/commodities/copper",
+    "wave_distribution": {
+      "Wave 1": 13,
+      "Wave 2": 0,
+      "Wave 3": 0,
+      "Wave 4": 1
+    }
+  },
+  "Industry: Electronics & Tech": {
+    "count": 67,
+    "total_volume": 934460,
+    "avg_score": 59,
+    "top_keywords": [
+      {
+        "keyword": "electronic recyclers international",
+        "volume": 49500,
+        "score": 76
+      },
+      {
+        "keyword": "melting point of silver solder",
+        "volume": 880,
+        "score": 73
+      },
+      {
+        "keyword": "melting point silver solder",
+        "volume": 880,
+        "score": 73
+      },
+      {
+        "keyword": "melting temp silver solder",
+        "volume": 880,
+        "score": 73
+      },
+      {
+        "keyword": "melting temperature of silver solder",
+        "volume": 880,
+        "score": 73
+      },
+      {
+        "keyword": "melting temperature silver solder",
+        "volume": 880,
+        "score": 73
+      },
+      {
+        "keyword": "silver solder melting point",
+        "volume": 880,
+        "score": 73
+      },
+      {
+        "keyword": "silver solder melting temp",
+        "volume": 880,
+        "score": 73
+      },
+      {
+        "keyword": "silver solder melting temperature",
+        "volume": 880,
+        "score": 73
+      },
+      {
+        "keyword": "silver solder melting temperatures",
+        "volume": 880,
+        "score": 73
+      }
+    ],
+    "target_url": "/insights",
+    "wave_distribution": {
+      "Wave 1": 29,
+      "Wave 2": 36,
+      "Wave 3": 0,
+      "Wave 4": 2
+    }
+  },
+  "Industry: Automotive & Catalytic": {
+    "count": 48,
+    "total_volume": 347900,
+    "avg_score": 57,
+    "top_keywords": [
+      {
+        "keyword": "catalyst manufacturer",
+        "volume": 110,
+        "score": 75
+      },
+      {
+        "keyword": "catalyst manufacturing",
+        "volume": 110,
+        "score": 75
+      },
+      {
+        "keyword": "darwin automotive login",
+        "volume": 1900,
+        "score": 73
+      },
+      {
+        "keyword": "karstedt catalyst",
+        "volume": 210,
+        "score": 73
+      },
+      {
+        "keyword": "karstedt's catalyst",
+        "volume": 210,
+        "score": 73
+      },
+      {
+        "keyword": "3-way catalyst",
+        "volume": 170,
+        "score": 73
+      },
+      {
+        "keyword": "three-way catalyst",
+        "volume": 170,
+        "score": 73
+      },
+      {
+        "keyword": "automotive technician vacancies",
+        "volume": 6600,
+        "score": 71
+      },
+      {
+        "keyword": "catalysts",
+        "volume": 246000,
+        "score": 69
+      },
+      {
+        "keyword": "catalyst disposal",
+        "volume": 480,
+        "score": 66
+      }
+    ],
+    "target_url": "/insights",
+    "wave_distribution": {
+      "Wave 1": 31,
+      "Wave 2": 17,
+      "Wave 3": 0,
+      "Wave 4": 0
+    }
+  },
+  "Industry: Renewable Energy": {
+    "count": 6,
+    "total_volume": 930,
+    "avg_score": 57,
+    "top_keywords": [
+      {
+        "keyword": "growth of solar energy",
+        "volume": 210,
+        "score": 66
+      },
+      {
+        "keyword": "growth of solar power",
+        "volume": 210,
+        "score": 66
+      },
+      {
+        "keyword": "renewable energy trade",
+        "volume": 70,
+        "score": 61
+      },
+      {
+        "keyword": "trading renewable energy",
+        "volume": 70,
+        "score": 61
+      },
+      {
+        "keyword": "renewable biomass group",
+        "volume": 260,
+        "score": 45
+      },
+      {
+        "keyword": "the use of solar power is increasing by",
+        "volume": 110,
+        "score": 45
+      }
+    ],
+    "target_url": "/insights",
+    "wave_distribution": {
+      "Wave 1": 2,
+      "Wave 2": 4,
+      "Wave 3": 0,
+      "Wave 4": 0
+    }
+  }
+}

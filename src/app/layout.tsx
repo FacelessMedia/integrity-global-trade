@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SITE_CONFIG } from "@/lib/constants";
+import { OrganizationJsonLd, LocalBusinessJsonLd } from "@/lib/structured-data";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -66,6 +67,8 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} font-sans antialiased`}
       >
+        <OrganizationJsonLd />
+        <LocalBusinessJsonLd />
         <Header />
         <main>{children}</main>
         <Footer />
