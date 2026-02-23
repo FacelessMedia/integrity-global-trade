@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Calendar, Clock, Tag } from "lucide-react";
+import { Calendar, Clock, Tag } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 import { BLOG_POSTS } from "@/lib/blog-posts";
 import { BreadcrumbJsonLd } from "@/lib/structured-data";
+import { NewsletterSignup } from "@/components/common/NewsletterSignup";
 
 export const metadata: Metadata = {
   title: "Insights & News",
@@ -98,22 +99,10 @@ export default function InsightsPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-slate-900">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Stay Informed on Market Developments
-          </h2>
-          <p className="text-slate-300 max-w-2xl mx-auto mb-8">
-            Contact us to receive our market analysis reports and industry insights
-            directly to your inbox.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold px-8 py-3.5 rounded-lg transition-colors shadow-lg"
-          >
-            Subscribe to Insights <ArrowRight className="h-4 w-4" />
-          </Link>
+      {/* Newsletter Signup — Item #92 */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6 max-w-2xl">
+          <NewsletterSignup />
         </div>
       </section>
     </>
