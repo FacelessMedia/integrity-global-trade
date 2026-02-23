@@ -276,6 +276,27 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Request a Reference — Item #46 */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mx-auto bg-slate-50 rounded-2xl p-10 border border-slate-200 text-center">
+            <ShieldCheck className="h-10 w-10 text-emerald-600 mx-auto mb-4" />
+            <h2 className="text-2xl font-bold text-slate-900 mb-3">Request a Client Reference</h2>
+            <p className="text-slate-600 mb-6">
+              We&apos;re proud of the relationships we&apos;ve built with clients across 50+ countries.
+              If you&apos;d like to speak with one of our existing clients about their experience
+              trading with Integrity Global Trade, we&apos;re happy to arrange a reference call.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-md text-sm"
+            >
+              Request a Reference <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 bg-slate-900">
         <div className="container mx-auto px-6 text-center">
