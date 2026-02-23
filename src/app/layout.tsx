@@ -4,7 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SITE_CONFIG } from "@/lib/constants";
-import { OrganizationJsonLd, LocalBusinessJsonLd } from "@/lib/structured-data";
+import { OrganizationJsonLd, LocalBusinessJsonLd, WebSiteJsonLd } from "@/lib/structured-data";
 import { ScrollToTop } from "@/components/common/ScrollToTop";
 
 const inter = Inter({
@@ -77,6 +77,7 @@ export default function RootLayout({
         </a>
         <OrganizationJsonLd />
         <LocalBusinessJsonLd />
+        <WebSiteJsonLd />
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
