@@ -68,6 +68,7 @@ export const NAV_LINKS = [
   },
   { label: "Compliance", href: "/compliance" },
   { label: "Insights", href: "/insights" },
+  { label: "Market Outlook", href: "/market-outlook" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
