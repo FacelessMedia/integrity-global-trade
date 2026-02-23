@@ -6,6 +6,7 @@ import { ComplianceSection } from "@/components/sections/ComplianceSection";
 import { AnimatedStats } from "@/components/sections/AnimatedStats";
 import { CTASection } from "@/components/sections/CTASection";
 import { OperationsShowcase } from "@/components/sections/OperationsShowcase";
+import { HowWeWork } from "@/components/sections/HowWeWork";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <HeroSection />
       <AnimatedStats />
       <ServicesSection />
+      <HowWeWork />
       <CommoditiesSection />
       <WhyChooseUsSection />
       <OperationsShowcase />
