@@ -219,10 +219,18 @@ export function Footer() {
       {/* Bottom bar */}
       <Separator className="bg-slate-800" />
       <div className="container mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-xs text-slate-500">
-          &copy; {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
-          Registered in the State of Wyoming, USA.
-        </p>
+        <div className="flex flex-col gap-2">
+          <p className="text-xs text-slate-500">
+            &copy; {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
+          </p>
+          <p className="text-xs text-slate-600">
+            Registered in the State of Wyoming, USA ·{" "}
+            <a href="https://wyobiz.wyo.gov/Business/FilingSearch.aspx" target="_blank" rel="noopener noreferrer" className="hover:text-slate-400 transition-colors underline">
+              Wyoming Secretary of State
+            </a>{" "}
+            · SSL Secured · KYC/AML Verified
+          </p>
+        </div>
         <div className="flex items-center gap-6 text-xs text-slate-500">
           <Link href="/privacy" className="hover:text-slate-300 transition-colors">
             Privacy Policy
@@ -232,6 +240,9 @@ export function Footer() {
           </Link>
           <Link href="/compliance" className="hover:text-slate-300 transition-colors">
             Compliance
+          </Link>
+          <Link href="/glossary" className="hover:text-slate-300 transition-colors">
+            Glossary
           </Link>
         </div>
       </div>
