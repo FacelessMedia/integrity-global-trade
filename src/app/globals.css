@@ -131,3 +131,28 @@
     color: oklch(0.2 0 0);
   }
 }
+
+@media print {
+  header, footer, nav, .fixed, [data-radix-scroll-area-viewport] {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+  }
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+}
