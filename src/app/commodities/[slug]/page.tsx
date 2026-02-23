@@ -6,7 +6,8 @@ import { COMMODITIES, SERVICES, SITE_CONFIG } from "@/lib/constants";
 import { CommodityJsonLd, BreadcrumbJsonLd, FAQJsonLd } from "@/lib/structured-data";
 import { COMMODITY_FAQS } from "@/lib/faqs";
 import { COMMODITY_EXPANDED_CONTENT } from "@/lib/commodity-content";
-import { ShieldCheck } from "lucide-react";
+import { BLOG_POSTS } from "@/lib/blog-posts";
+import { ShieldCheck, BookOpen } from "lucide-react";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -248,6 +249,33 @@ export default async function CommodityDetailPage({ params }: PageProps) {
                 transaction execution. Contact our trading desk for current pricing.
               </p>
             </div>
+
+            {/* Related Blog Posts — Internal Linking */}
+            {(() => {
+              const titleLower = commodity.title.toLowerCase();
+              const related = BLOG_POSTS.filter((p) =>
+                p.keywords.some((k) => k.toLowerCase().includes(titleLower) || titleLower.includes(k.split(" ")[0].toLowerCase())) ||
+                p.title.toLowerCase().includes(titleLower)
+              ).slice(0, 3);
+              if (related.length === 0) return null;
+              return (
+                <div className="mb-16">
+                  <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <BookOpen className="h-5 w-5 text-amber-600" />
+                    Related Insights
+                  </h2>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    {related.map((post) => (
+                      <Link key={post.slug} href={`/insights/${post.slug}`} className="group bg-slate-50 rounded-xl p-5 border border-slate-200 hover:border-amber-300 hover:shadow-md transition-all">
+                        <div className="text-xs font-semibold text-amber-600 mb-2">{post.category}</div>
+                        <h3 className="text-sm font-bold text-slate-900 group-hover:text-amber-700 transition-colors line-clamp-2 mb-2">{post.title}</h3>
+                        <p className="text-xs text-slate-500">{post.readTime}</p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })()}
 
             {/* CTA */}
             <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-10 text-center">
