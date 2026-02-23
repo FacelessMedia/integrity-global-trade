@@ -55,6 +55,10 @@ export const metadata: Metadata = {
     icon: "/images/icon.png",
     apple: "/images/icon.png",
   },
+  metadataBase: new URL(SITE_CONFIG.url),
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({
