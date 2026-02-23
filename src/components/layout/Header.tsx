@@ -75,7 +75,7 @@ export function Header() {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-0.5">
+            <nav className="hidden lg:flex items-center gap-0.5" aria-label="Main navigation">
               {NAV_LINKS.map((link) => (
                 <div
                   key={link.label}
