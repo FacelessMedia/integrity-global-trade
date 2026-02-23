@@ -7,6 +7,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 import { OrganizationJsonLd, LocalBusinessJsonLd, WebSiteJsonLd } from "@/lib/structured-data";
 import { ScrollToTop } from "@/components/common/ScrollToTop";
 import { MobileStickyBar } from "@/components/common/MobileStickyBar";
+import { CookieConsent } from "@/components/common/CookieConsent";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -90,6 +91,7 @@ export default function RootLayout({
         <Footer />
         <ScrollToTop />
         <MobileStickyBar />
+        <CookieConsent />
       </body>
     </html>
   );
