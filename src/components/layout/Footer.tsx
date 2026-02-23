@@ -30,12 +30,12 @@ const footerLinks = {
   ],
   company: [
     { label: "About Us", href: "/about" },
-    { label: "Industries We Serve", href: "/industries" },
-    { label: "Compliance & Ethics", href: "/compliance" },
-    { label: "Insights & News", href: "/insights" },
+    { label: "Our Team", href: "/team" },
+    { label: "Case Studies", href: "/case-studies" },
+    { label: "Partners", href: "/partners" },
+    { label: "Careers", href: "/careers" },
+    { label: "Resources", href: "/resources" },
     { label: "Contact", href: "/contact" },
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Service", href: "/terms" },
   ],
 };
 

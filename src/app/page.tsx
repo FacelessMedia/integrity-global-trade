@@ -11,6 +11,7 @@ const ComplianceSection = dynamic(() => import("@/components/sections/Compliance
 const PartnerLogos = dynamic(() => import("@/components/sections/PartnerLogos").then(m => ({ default: m.PartnerLogos })));
 const WhyChooseIGTC = dynamic(() => import("@/components/sections/WhyChooseIGTC").then(m => ({ default: m.WhyChooseIGTC })));
 const CTASection = dynamic(() => import("@/components/sections/CTASection").then(m => ({ default: m.CTASection })));
+const Testimonials = dynamic(() => import("@/components/sections/Testimonials").then(m => ({ default: m.Testimonials })));
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <HowWeWork />
       <CommoditiesSection />
       <WhyChooseUsSection />
+      <Testimonials />
       <OperationsShowcase />
       <ComplianceSection />
       <PartnerLogos />

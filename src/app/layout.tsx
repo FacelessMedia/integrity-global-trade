@@ -10,6 +10,8 @@ import { MobileStickyBar } from "@/components/common/MobileStickyBar";
 import { CookieConsent } from "@/components/common/CookieConsent";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { CommodityPriceTicker } from "@/components/common/CommodityPriceTicker";
+import { FloatingQuoteButton } from "@/components/common/FloatingQuoteButton";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -78,6 +80,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.google.com" />
         <link rel="dns-prefetch" href="https://maps.googleapis.com" />
+        <meta httpEquiv="content-language" content="en-US" />
       </head>
       <body
         className={`${inter.variable} ${playfair.variable} font-sans antialiased`}
@@ -88,12 +91,14 @@ export default function RootLayout({
         <OrganizationJsonLd />
         <LocalBusinessJsonLd />
         <WebSiteJsonLd />
+        <CommodityPriceTicker />
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
         <ScrollToTop />
         <MobileStickyBar />
         <CookieConsent />
+        <FloatingQuoteButton />
         <Analytics />
         <SpeedInsights />
       </body>

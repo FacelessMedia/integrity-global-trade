@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { BLOG_POSTS } from "@/lib/blog-posts";
 import { SITE_CONFIG } from "@/lib/constants";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/lib/structured-data";
+import { ReadingProgressBar } from "@/components/common/ReadingProgressBar";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -51,6 +52,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   return (
     <>
+      <ReadingProgressBar />
       <ArticleJsonLd
         title={post.title}
         description={post.description}
@@ -145,8 +147,46 @@ export default async function BlogPostPage({ params }: PageProps) {
               </a>
             </div>
 
+            {/* Author Bio Card — Item #40 */}
+            <div className="mt-12 bg-slate-50 rounded-xl p-6 border border-slate-200 flex items-start gap-4">
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-amber-100 to-amber-50 border border-amber-200 flex items-center justify-center shrink-0 text-lg font-bold text-amber-700">
+                {post.author.split(" ").map(n => n[0]).join("")}
+              </div>
+              <div>
+                <div className="font-bold text-slate-900 text-sm">{post.author}</div>
+                <div className="text-xs text-slate-500 mb-2">{SITE_CONFIG.shortName} · Market Analysis</div>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Expert analysis from the {SITE_CONFIG.shortName} team covering precious metals markets,
+                  compliance best practices, and supply chain intelligence for commodities professionals.
+                </p>
+              </div>
+            </div>
+
+            {/* Related Posts — Item #39 */}
+            <div className="mt-12">
+              <h3 className="text-lg font-bold text-slate-900 mb-6">Related Articles</h3>
+              <div className="grid sm:grid-cols-3 gap-4">
+                {BLOG_POSTS.filter(p => p.slug !== post.slug && p.category === post.category).slice(0, 3).map(related => (
+                  <Link key={related.slug} href={`/insights/${related.slug}`} className="group bg-white rounded-lg p-4 border border-slate-200 hover:border-amber-200 hover:shadow-md transition-all">
+                    <div className="text-xs text-amber-600 font-semibold mb-1">{related.category}</div>
+                    <h4 className="text-sm font-bold text-slate-900 group-hover:text-amber-700 transition-colors line-clamp-2 mb-2">{related.title}</h4>
+                    <div className="text-[10px] text-slate-400">{related.readTime}</div>
+                  </Link>
+                ))}
+                {BLOG_POSTS.filter(p => p.slug !== post.slug && p.category === post.category).length < 3 &&
+                  BLOG_POSTS.filter(p => p.slug !== post.slug && p.category !== post.category).slice(0, 3 - BLOG_POSTS.filter(p => p.slug !== post.slug && p.category === post.category).length).map(related => (
+                    <Link key={related.slug} href={`/insights/${related.slug}`} className="group bg-white rounded-lg p-4 border border-slate-200 hover:border-amber-200 hover:shadow-md transition-all">
+                      <div className="text-xs text-amber-600 font-semibold mb-1">{related.category}</div>
+                      <h4 className="text-sm font-bold text-slate-900 group-hover:text-amber-700 transition-colors line-clamp-2 mb-2">{related.title}</h4>
+                      <div className="text-[10px] text-slate-400">{related.readTime}</div>
+                    </Link>
+                  ))
+                }
+              </div>
+            </div>
+
             {/* Trust CTA */}
-            <div className="mt-16 bg-slate-50 rounded-2xl p-8 border border-slate-200">
+            <div className="mt-12 bg-slate-50 rounded-2xl p-8 border border-slate-200">
               <div className="flex items-start gap-4">
                 <ShieldCheck className="h-8 w-8 text-emerald-600 shrink-0 mt-1" />
                 <div>
