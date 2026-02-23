@@ -1,14 +1,16 @@
+import dynamic from "next/dynamic";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { ServicesSection } from "@/components/sections/ServicesSection";
-import { CommoditiesSection } from "@/components/sections/CommoditiesSection";
-import { WhyChooseUsSection } from "@/components/sections/WhyChooseUsSection";
-import { ComplianceSection } from "@/components/sections/ComplianceSection";
 import { AnimatedStats } from "@/components/sections/AnimatedStats";
-import { CTASection } from "@/components/sections/CTASection";
-import { OperationsShowcase } from "@/components/sections/OperationsShowcase";
-import { HowWeWork } from "@/components/sections/HowWeWork";
-import { PartnerLogos } from "@/components/sections/PartnerLogos";
-import { WhyChooseIGTC } from "@/components/sections/WhyChooseIGTC";
+import { ServicesSection } from "@/components/sections/ServicesSection";
+
+const HowWeWork = dynamic(() => import("@/components/sections/HowWeWork").then(m => ({ default: m.HowWeWork })));
+const CommoditiesSection = dynamic(() => import("@/components/sections/CommoditiesSection").then(m => ({ default: m.CommoditiesSection })));
+const WhyChooseUsSection = dynamic(() => import("@/components/sections/WhyChooseUsSection").then(m => ({ default: m.WhyChooseUsSection })));
+const OperationsShowcase = dynamic(() => import("@/components/sections/OperationsShowcase").then(m => ({ default: m.OperationsShowcase })));
+const ComplianceSection = dynamic(() => import("@/components/sections/ComplianceSection").then(m => ({ default: m.ComplianceSection })));
+const PartnerLogos = dynamic(() => import("@/components/sections/PartnerLogos").then(m => ({ default: m.PartnerLogos })));
+const WhyChooseIGTC = dynamic(() => import("@/components/sections/WhyChooseIGTC").then(m => ({ default: m.WhyChooseIGTC })));
+const CTASection = dynamic(() => import("@/components/sections/CTASection").then(m => ({ default: m.CTASection })));
 
 export default function Home() {
   return (
