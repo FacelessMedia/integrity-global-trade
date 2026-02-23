@@ -162,13 +162,6 @@ export function Header() {
 
             {/* CTA + Mobile toggle */}
             <div className="flex items-center gap-3">
-              <a
-                href={`tel:${SITE_CONFIG.phoneRaw}`}
-                className="hidden xl:flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900 font-medium transition-colors mr-2"
-              >
-                <Phone className="h-4 w-4 text-amber-600" />
-                {SITE_CONFIG.phone}
-              </a>
               <Button
                 asChild
                 className="hidden md:inline-flex bg-slate-900 hover:bg-slate-800 text-white shadow-md hover:shadow-lg transition-all font-semibold"

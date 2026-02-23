@@ -13,6 +13,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { CommodityPriceTicker } from "@/components/common/CommodityPriceTicker";
 import { FloatingQuoteButton } from "@/components/common/FloatingQuoteButton";
 import { ExitIntentPopup } from "@/components/common/ExitIntentPopup";
+import { ChatBot } from "@/components/common/ChatBot";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -99,7 +100,7 @@ export default function RootLayout({
         <ScrollToTop />
         <MobileStickyBar />
         <CookieConsent />
-        <FloatingQuoteButton />
+        <ChatBot />
         <ExitIntentPopup />
         <Analytics />
         <SpeedInsights />
