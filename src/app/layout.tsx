@@ -12,6 +12,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { CommodityPriceTicker } from "@/components/common/CommodityPriceTicker";
 import { FloatingQuoteButton } from "@/components/common/FloatingQuoteButton";
+import { ExitIntentPopup } from "@/components/common/ExitIntentPopup";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -99,6 +100,7 @@ export default function RootLayout({
         <MobileStickyBar />
         <CookieConsent />
         <FloatingQuoteButton />
+        <ExitIntentPopup />
         <Analytics />
         <SpeedInsights />
       </body>
