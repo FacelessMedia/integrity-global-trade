@@ -8,6 +8,7 @@ import { CTASection } from "@/components/sections/CTASection";
 import { OperationsShowcase } from "@/components/sections/OperationsShowcase";
 import { HowWeWork } from "@/components/sections/HowWeWork";
 import { PartnerLogos } from "@/components/sections/PartnerLogos";
+import { WhyChooseIGTC } from "@/components/sections/WhyChooseIGTC";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <OperationsShowcase />
       <ComplianceSection />
       <PartnerLogos />
+      <WhyChooseIGTC />
       <CTASection />
     </>
   );
