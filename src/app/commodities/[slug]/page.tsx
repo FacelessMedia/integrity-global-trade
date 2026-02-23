@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, ArrowLeft, CheckCircle } from "lucide-react";
-import { COMMODITIES, SITE_CONFIG } from "@/lib/constants";
-import { CommodityJsonLd, BreadcrumbJsonLd } from "@/lib/structured-data";
+import { COMMODITIES, SERVICES, SITE_CONFIG } from "@/lib/constants";
+import { CommodityJsonLd, BreadcrumbJsonLd, FAQJsonLd } from "@/lib/structured-data";
+import { COMMODITY_FAQS } from "@/lib/faqs";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -138,6 +139,38 @@ export default async function CommodityDetailPage({ params }: PageProps) {
                 )}
               </div>
             </div>
+
+            {/* Related Services — Item #10 */}
+            <div className="mb-16">
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Related Services</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {SERVICES.slice(0, 4).map((s) => (
+                  <Link key={s.slug} href={`/services/${s.slug}`} className="flex items-center gap-3 bg-slate-50 rounded-lg p-4 border border-slate-200 hover:border-amber-300 hover:shadow-md transition-all">
+                    <ArrowRight className="h-4 w-4 text-amber-500 shrink-0" />
+                    <span className="text-sm font-medium text-slate-700">{s.title}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* FAQ Section — Item #2 */}
+            {COMMODITY_FAQS[commodity.slug] && (
+              <div className="mb-16">
+                <FAQJsonLd faqs={COMMODITY_FAQS[commodity.slug]} />
+                <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
+                <div className="space-y-4">
+                  {COMMODITY_FAQS[commodity.slug].map((faq) => (
+                    <details key={faq.question} className="group bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+                      <summary className="flex items-center justify-between p-6 cursor-pointer text-slate-900 font-semibold hover:text-amber-700 transition-colors">
+                        {faq.question}
+                        <span className="text-amber-500 group-open:rotate-45 transition-transform text-xl">+</span>
+                      </summary>
+                      <div className="px-6 pb-6 text-slate-600 leading-relaxed">{faq.answer}</div>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* CTA */}
             <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-10 text-center">
