@@ -86,9 +86,10 @@ export default async function BlogPostPage({ params }: PageProps) {
               {post.title}
             </h1>
             <p className="text-lg text-slate-300 leading-relaxed mb-6">{post.description}</p>
-            <div className="flex items-center gap-4 text-sm text-slate-400">
+            <div className="flex flex-wrap items-center gap-4 text-sm text-slate-400">
               <span className="flex items-center gap-1.5"><Calendar className="h-4 w-4" />{new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</span>
               <span className="flex items-center gap-1.5"><Clock className="h-4 w-4" />{post.readTime}</span>
+              <span className="flex items-center gap-1.5">{post.content.split(/\s+/).length.toLocaleString()} words</span>
               <span className="flex items-center gap-1.5">By {post.author}</span>
             </div>
           </div>
@@ -99,6 +100,24 @@ export default async function BlogPostPage({ params }: PageProps) {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
+            {/* Table of Contents */}
+            {(() => {
+              const headings = post.content.split("\n").filter((l) => l.trim().startsWith("## ")).map((l) => l.trim().replace("## ", ""));
+              if (headings.length < 3) return null;
+              return (
+                <nav className="mb-12 bg-slate-50 rounded-xl p-6 border border-slate-200">
+                  <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">Table of Contents</div>
+                  <ol className="space-y-1.5">
+                    {headings.map((h, i) => (
+                      <li key={i} className="text-sm text-slate-600 hover:text-amber-600 transition-colors">
+                        <span className="text-amber-500 font-semibold mr-2">{i + 1}.</span>{h}
+                      </li>
+                    ))}
+                  </ol>
+                </nav>
+              );
+            })()}
+
             <article className="prose prose-lg prose-slate max-w-none prose-headings:font-bold prose-headings:text-slate-900 prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:leading-relaxed prose-p:text-slate-600 prose-strong:text-slate-800 prose-li:text-slate-600 prose-ul:my-4 prose-ol:my-4">
               {post.content.split("\n").map((line, i) => {
                 const trimmed = line.trim();
