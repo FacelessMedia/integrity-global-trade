@@ -74,6 +74,7 @@ export default async function CommodityDetailPage({ params }: PageProps) {
           <p className="text-xl text-slate-300 leading-relaxed max-w-3xl">
             {commodity.description}
           </p>
+          <p className="text-xs text-slate-500 mt-4">Last updated: February 2026</p>
         </div>
       </section>
 

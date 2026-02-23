@@ -65,6 +65,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             <p className="text-xl text-slate-300 leading-relaxed">
               {service.description}
             </p>
+            <p className="text-xs text-slate-500 mt-4">Last updated: February 2026</p>
           </div>
         </div>
       </section>
