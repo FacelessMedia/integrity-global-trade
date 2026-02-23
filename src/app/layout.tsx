@@ -8,6 +8,8 @@ import { OrganizationJsonLd, LocalBusinessJsonLd, WebSiteJsonLd } from "@/lib/st
 import { ScrollToTop } from "@/components/common/ScrollToTop";
 import { MobileStickyBar } from "@/components/common/MobileStickyBar";
 import { CookieConsent } from "@/components/common/CookieConsent";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -92,6 +94,8 @@ export default function RootLayout({
         <ScrollToTop />
         <MobileStickyBar />
         <CookieConsent />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
