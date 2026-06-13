@@ -53,7 +53,7 @@ export function Footer() {
               Ready to Partner with a Trusted Trading Firm?
             </h3>
             <p className="text-slate-400 mt-2 max-w-xl">
-              Over $3 billion in closed contract volume. Full KYC/AML compliance on every transaction.
+              Over $1 billion in allocated contract volume. Full KYC/AML compliance on every transaction.
               Verified sourcing from certified mines. Let&apos;s discuss how we can serve your business.
             </p>
           </div>
@@ -91,8 +91,8 @@ export function Footer() {
               />
             </div>
             <p className="text-slate-400 text-sm leading-relaxed max-w-md mb-6">
-              A premier global commodities trading company with over <strong className="text-white">$3 billion
-              in closed contract volume</strong>. Specializing in precious metals,
+              A premier global commodities trading company with over <strong className="text-white">$1 billion
+              in allocated contract volume</strong>. Specializing in precious metals,
               non-ferrous metals, and critical minerals with uncompromising KYC/AML compliance.
             </p>
 
@@ -211,8 +211,8 @@ export function Footer() {
               )}
             </div>
             <div className="mt-6 bg-slate-800/50 rounded-lg p-4 border border-slate-700">
-              <div className="text-2xl font-bold text-white">$3B+</div>
-              <div className="text-xs text-slate-400 mt-1">Closed Contract Volume</div>
+              <div className="text-2xl font-bold text-white">$1B+</div>
+              <div className="text-xs text-slate-400 mt-1">Allocated Contract Volume</div>
               <div className="text-xs text-slate-500 mt-0.5">Est. {SITE_CONFIG.established}</div>
             </div>
           </div>

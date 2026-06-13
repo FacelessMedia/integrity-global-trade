@@ -73,7 +73,7 @@ export default function AboutPage() {
                   connection applications.
                 </p>
                 <p>
-                  Today, with over <strong>$3 billion in closed contract volume</strong>,
+                  Today, with over <strong>$1 billion in allocated contract volume</strong>,
                   Integrity Global Trade serves clients across 50+ countries, providing
                   precious metals, non-ferrous metals, and critical minerals to semiconductor
                   manufacturers, industrial consumers, renewable energy companies, and
@@ -219,8 +219,8 @@ export default function AboutPage() {
                       across global markets.
                     </p>
                     <p>
-                      Under his leadership, the company has facilitated over <strong className="text-slate-800">$3 billion
-                      in closed contracts and facilitation</strong>, established partnerships with
+                      Under his leadership, the company has facilitated over <strong className="text-slate-800">$1 billion
+                      in allocated contracts and facilitation</strong>, established partnerships with
                       UN-certified mines, built a comprehensive compliance framework powered
                       by ComplyAdvantage AI technology, and forged strategic alliances with
                       world-class refineries including IPMR.
@@ -240,7 +240,7 @@ export default function AboutPage() {
                       Est. {SITE_CONFIG.established}
                     </span>
                     <span className="text-xs bg-amber-50 text-amber-700 px-3 py-1.5 rounded-full border border-amber-200 font-medium">
-                      $3B+ Closed Volume
+                      $1B+ Allocated Volume
                     </span>
                   </div>
                 </div>
@@ -261,9 +261,9 @@ export default function AboutPage() {
             {[
               { year: "2022", title: "Company Founded", description: "Timothy Mercer establishes Integrity Global Trade & Commodities Corp in Sheridan, Wyoming with a mission to bring ethical, compliant commodities trading to global markets." },
               { year: "2023", title: "IPMR Partnership Established", description: "Strategic partnership with International Precious Metals Refiners (IPMR) for state-of-the-art Miller Processing and LBMA Good Delivery standard refining." },
-              { year: "2023", title: "$1 Billion in Facilitated Volume", description: "Integrity Global Trade surpasses $1 billion in closed contract volume and facilitation within the first 18 months of operations." },
+              { year: "2023", title: "$500 Million in Allocated Volume", description: "Integrity Global Trade surpasses $500 million in allocated contract volume and facilitation within the first 18 months of operations." },
               { year: "2024", title: "ComplyAdvantage AI Integration", description: "Implementation of ComplyAdvantage AI-powered sanctions screening and real-time KYC/AML compliance technology across all operations." },
-              { year: "2025", title: "$3 Billion Milestone", description: "Company surpasses $3 billion in total closed contract volume and facilitation, serving clients across 50+ countries worldwide." },
+              { year: "2025", title: "$1 Billion Milestone", description: "Company surpasses $1 billion in total allocated contract volume and facilitation, serving clients across 50+ countries worldwide." },
               { year: "2026", title: "Continued Growth", description: "Expanding semiconductor metals supply capabilities and deepening relationships with UN-certified mining operations globally." },
             ].map((milestone, idx) => (
               <div key={idx} className="flex gap-6 items-start">

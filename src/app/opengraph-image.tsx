@@ -92,7 +92,7 @@ export default async function Image() {
           {/* Stats */}
           <div style={{ display: "flex", gap: 48 }}>
             {[
-              { value: "$3B+", label: "Contract Volume" },
+              { value: "$1B+", label: "Contract Volume" },
               { value: "50+", label: "Countries" },
               { value: "100%", label: "KYC Compliant" },
             ].map((stat) => (

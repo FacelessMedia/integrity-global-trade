@@ -10,7 +10,7 @@ const comparisons = [
   { feature: "LBMA Good Delivery standard refining (IPMR)", igtc: true, traditional: false },
   { feature: "Environmental Impact Certified mines only", igtc: true, traditional: false },
   { feature: "Semiconductor-grade purity metals", igtc: true, traditional: false },
-  { feature: "$3B+ in closed contract volume", igtc: true, traditional: false },
+  { feature: "$1B+ in allocated contract volume", igtc: true, traditional: false },
   { feature: "Physical precious metals delivery", igtc: true, traditional: true },
   { feature: "Non-ferrous metals supply", igtc: true, traditional: true },
   { feature: "Global operations (50+ countries)", igtc: true, traditional: true },

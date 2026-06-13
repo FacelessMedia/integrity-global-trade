@@ -57,7 +57,7 @@ export default function WhyIGTCPage() {
             <div className="flex items-center gap-6 mt-8">
               <div className="text-center">
                 <div className="text-3xl font-bold text-white">{SITE_CONFIG.totalVolume}</div>
-                <div className="text-xs text-slate-400">Closed Volume</div>
+                <div className="text-xs text-slate-400">Allocated Volume</div>
               </div>
               <div className="w-px h-12 bg-slate-700" />
               <div className="text-center">

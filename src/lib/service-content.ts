@@ -7,14 +7,14 @@ export const SERVICE_EXPANDED_CONTENT: Record<string, {
   keyBenefits: { title: string; description: string }[];
 }> = {
   "precious-metals-trading": {
-    overview: `Integrity Global Trade & Commodities Corp is a leading physical precious metals trading company specializing in gold, silver, platinum, and palladium sourcing from UN Certified and Environmental Impact Certified mines worldwide. With over $3 billion in closed contract volume, we serve Fortune 500 semiconductor manufacturers, European automotive OEMs, international refineries, and institutional investors.
+    overview: `Integrity Global Trade & Commodities Corp is a leading physical precious metals trading company specializing in gold, silver, platinum, and palladium sourcing from UN Certified and Environmental Impact Certified mines worldwide. With over $1 billion in allocated contract volume, we serve Fortune 500 semiconductor manufacturers, European automotive OEMs, international refineries, and institutional investors.
 
 Our precious metals trading operations are built on a compliance-first foundation. Every counterparty undergoes comprehensive KYC/AML verification through ComplyAdvantage's AI-powered sanctions screening platform before any transaction is executed. Every ounce of metal we trade is traceable from certified mine to client facility with complete chain-of-custody documentation.
 
 Through our exclusive refining partnership with IPMR (International Precious Metals Refiners), we deliver precious metals meeting LBMA Good Delivery standards — the global benchmark for institutional-grade quality. Our Miller Process and electrolytic refining capabilities produce gold at purities ranging from 99.5% to 99.99%+ semiconductor-grade quality.`,
 
     whyIGTC: [
-      "Over $3 billion in closed contract volume across 50+ countries",
+      "Over $1 billion in allocated contract volume across 50+ countries",
       "100% UN Certified mine sourcing — zero exceptions, zero compromises",
       "IPMR refining partnership for LBMA Good Delivery standard precious metals",
       "Real-time ComplyAdvantage AI sanctions screening on every transaction",

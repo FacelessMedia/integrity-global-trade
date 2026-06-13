@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const values = [
   { icon: ShieldCheck, title: "Integrity First", description: "Every decision we make starts with compliance and ethics. We never cut corners on due diligence." },
   { icon: Globe, title: "Global Impact", description: "Our work spans 50+ countries, connecting certified mines to Fortune 500 manufacturers." },
-  { icon: TrendingUp, title: "Growth Trajectory", description: "Over $3B in closed volume in 4 years. We're scaling fast and need exceptional people." },
+  { icon: TrendingUp, title: "Growth Trajectory", description: "Over $1B in allocated volume in 4 years. We're scaling fast and need exceptional people." },
   { icon: Users, title: "Small Team, Big Impact", description: "Every team member has a direct impact on the business. No bureaucracy, just results." },
 ];
 

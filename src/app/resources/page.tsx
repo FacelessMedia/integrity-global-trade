@@ -117,7 +117,7 @@ export default function ResourcesPage() {
           <h2 className="text-3xl font-bold text-white mb-4">Need Something Specific?</h2>
           <p className="text-slate-300 max-w-xl mx-auto mb-8">
             Our team is available to discuss any aspect of precious metals trading, compliance,
-            or supply chain management. Over $3 billion in closed contract volume.
+            or supply chain management. Over $1 billion in allocated contract volume.
           </p>
           <Link
             href="/contact"

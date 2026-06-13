@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
   shortName: "Integrity Global Trade",
   abbreviation: "IGTC",
   description:
-    "A premier global commodities trading company specializing in precious metals, non-ferrous metals, and critical minerals for semiconductor manufacturing. Over $3 billion in closed contract volume. Ethical sourcing from UN-certified mines with full KYC/AML compliance.",
+    "A premier global commodities trading company specializing in precious metals, non-ferrous metals, and critical minerals for semiconductor manufacturing. Over $1 billion in allocated contract volume. Ethical sourcing from UN-certified mines with full KYC/AML compliance.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://integrityglobaltrade.com",
   founder: "Timothy Mercer",
   founderTitle: "Founder & CEO",
@@ -21,7 +21,7 @@ export const SITE_CONFIG = {
   },
   established: 2022,
   yearsInBusiness: 4,
-  totalVolume: "$3B+",
+  totalVolume: "$1B+",
 } as const;
 
 export const NAV_LINKS = [
@@ -222,7 +222,7 @@ export const COMMODITIES = [
 ] as const;
 
 export const STATS = [
-  { value: "$3B+", label: "Closed Contract Volume" },
+  { value: "$1B+", label: "Allocated Contract Volume" },
   { value: "4+", label: "Years in Operation" },
   { value: "100%", label: "KYC/AML Compliance Rate" },
   { value: "50+", label: "Countries Served" },

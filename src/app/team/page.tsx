@@ -16,7 +16,7 @@ const leadership = [
     title: "Founder & Chief Executive Officer",
     image: "/images/tim-mercer.jpg",
     linkedin: SITE_CONFIG.founderLinkedin,
-    bio: "Timothy Mercer founded Integrity Global Trade & Commodities Corp with a singular vision: to bring institutional-grade compliance and ethical sourcing standards to the global commodities trading industry. Under his leadership, IGTC has facilitated over $3 billion in closed contract volume across 50+ countries, serving Fortune 500 semiconductor manufacturers, European automotive OEMs, and international refineries.",
+    bio: "Timothy Mercer founded Integrity Global Trade & Commodities Corp with a singular vision: to bring institutional-grade compliance and ethical sourcing standards to the global commodities trading industry. Under his leadership, IGTC has facilitated over $1 billion in allocated contract volume across 50+ countries, serving Fortune 500 semiconductor manufacturers, European automotive OEMs, and international refineries.",
     expertise: ["Precious Metals Trading", "KYC/AML Compliance", "Supply Chain Due Diligence", "Semiconductor Metals"],
   },
 ];

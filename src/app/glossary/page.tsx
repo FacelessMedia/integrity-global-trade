@@ -82,7 +82,7 @@ export default function GlossaryPage() {
               <h2 className="text-2xl font-bold text-white mb-4">Have Questions About Metals Trading?</h2>
               <p className="text-slate-300 max-w-xl mx-auto mb-8">
                 Our team is available to discuss any aspect of precious metals, non-ferrous metals,
-                or commodities trading. Over $3 billion in closed contract volume.
+                or commodities trading. Over $1 billion in allocated contract volume.
               </p>
               <Link href="/contact" className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold px-8 py-3.5 rounded-lg transition-colors shadow-lg">
                 Contact Our Team

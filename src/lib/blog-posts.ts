@@ -439,7 +439,7 @@ When selecting a physical gold trading partner, institutional buyers should eval
 4. **Track record** — What is their volume and history in the market?
 5. **Documentation** — Do they provide full assay certificates and chain-of-custody records?
 
-With over $3 billion in closed contract volume and a partnership with IPMR, Integrity Global Trade delivers the quality, compliance, and documentation that institutional gold buyers require.
+With over $1 billion in allocated contract volume and a partnership with IPMR, Integrity Global Trade delivers the quality, compliance, and documentation that institutional gold buyers require.
 
 ---
 
@@ -698,7 +698,7 @@ At Integrity Global Trade & Commodities Corp, we check every box on this list:
 
 ---
 
-*Use this checklist to evaluate your commodities trading partners. Contact Integrity Global Trade for a compliance-first trading relationship backed by $3 billion in closed contract volume.*`,
+*Use this checklist to evaluate your commodities trading partners. Contact Integrity Global Trade for a compliance-first trading relationship backed by $1 billion in allocated contract volume.*`,
   },
   {
     slug: "silver-solar-energy-photovoltaics",

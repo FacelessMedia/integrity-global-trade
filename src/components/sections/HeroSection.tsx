@@ -30,7 +30,7 @@ export function HeroSection() {
             <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-1.5 mb-8">
               <ShieldCheck className="h-4 w-4 text-emerald-400" />
               <span className="text-emerald-400 text-sm font-semibold">
-                Verified · KYC/AML Compliant · $3B+ Closed Volume
+                Verified · KYC/AML Compliant · $1B+ Allocated Volume
               </span>
             </div>
 
@@ -45,7 +45,7 @@ export function HeroSection() {
             {/* Subheadline */}
             <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed">
               Integrity Global Trade & Commodities Corp has facilitated over{" "}
-              <strong className="text-white">$3 billion in closed contracts</strong> across
+              <strong className="text-white">$1 billion in allocated contracts</strong> across
               precious metals, non-ferrous metals, and critical minerals. Every transaction is
               fully KYC/AML verified with documented chain-of-custody from UN-certified mines.
             </p>
@@ -78,7 +78,7 @@ export function HeroSection() {
             {/* Trust indicators */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
-                { icon: <BadgeDollarSign className="h-5 w-5 text-amber-400" />, title: "$3B+", subtitle: "Closed Contract Volume" },
+                { icon: <BadgeDollarSign className="h-5 w-5 text-amber-400" />, title: "$1B+", subtitle: "Allocated Contract Volume" },
                 { icon: <Shield className="h-5 w-5 text-emerald-400" />, title: "100%", subtitle: "KYC/AML Compliance" },
                 { icon: <Globe className="h-5 w-5 text-blue-400" />, title: "50+", subtitle: "Countries Served" },
                 { icon: <Award className="h-5 w-5 text-amber-400" />, title: "LBMA", subtitle: "Standards Compliant" },

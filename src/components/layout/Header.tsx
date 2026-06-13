@@ -85,7 +85,7 @@ export function Header() {
               <span className="text-emerald-400 font-semibold">KYC/AML Verified</span>
             </div>
             <span className="text-slate-600">|</span>
-            <span className="text-slate-400">$3B+ Closed Contract Volume</span>
+            <span className="text-slate-400">$1B+ Allocated Contract Volume</span>
             <span className="text-slate-600">|</span>
             <a
               href={SITE_CONFIG.founderLinkedin}

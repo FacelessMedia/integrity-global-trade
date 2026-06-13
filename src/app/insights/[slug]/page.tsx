@@ -214,8 +214,8 @@ export default async function BlogPostPage({ params }: PageProps) {
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Trade with Confidence</h3>
                   <p className="text-slate-600 mb-4">
                     Integrity Global Trade & Commodities Corp delivers ethically sourced metals with
-                    full KYC/AML compliance, chain-of-custody documentation, and over $3 billion in
-                    closed contract volume.
+                    full KYC/AML compliance, chain-of-custody documentation, and over $1 billion in
+                    allocated contract volume.
                   </p>
                   <Link href="/contact" className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors text-sm">
                     Request a Consultation <ArrowRight className="h-4 w-4" />

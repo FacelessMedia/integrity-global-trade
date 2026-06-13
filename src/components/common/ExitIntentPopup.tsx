@@ -77,7 +77,7 @@ export function ExitIntentPopup() {
             </button>
           </div>
           <p className="text-[10px] text-slate-400 mt-4">
-            $3B+ in closed contract volume &bull; 50+ countries served &bull; 100% KYC/AML compliant
+            $1B+ in allocated contract volume &bull; 50+ countries served &bull; 100% KYC/AML compliant
           </p>
         </div>
       </div>

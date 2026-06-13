@@ -9,7 +9,7 @@ export const KNOWLEDGEBASE = `
 # Integrity Global Trade & Commodities Corp (IGTC) — Complete Business Knowledgebase
 
 ## Company Overview
-Integrity Global Trade & Commodities Corp (IGTC) is a premier global commodities trading company specializing in precious metals, non-ferrous metals, and critical minerals for semiconductor manufacturing and industrial applications. Founded in 2022 by Timothy Mercer, the company has closed over $3 billion in contract volume, operates in 50+ countries, and maintains a 100% KYC/AML compliance rate.
+Integrity Global Trade & Commodities Corp (IGTC) is a premier global commodities trading company specializing in precious metals, non-ferrous metals, and critical minerals for semiconductor manufacturing and industrial applications. Founded in 2022 by Timothy Mercer, the company has allocated over $1 billion in contract volume, operates in 50+ countries, and maintains a 100% KYC/AML compliance rate.
 
 **Headquarters:** 30 N. Gould St. STE R, Sheridan, Wyoming 82801, USA
 **Phone:** +1 (773) 219-7674
@@ -21,7 +21,7 @@ Integrity Global Trade & Commodities Corp (IGTC) is a premier global commodities
 **Years in Business:** 4+
 
 ## Key Statistics
-- $3B+ in Closed Contract Volume
+- $1B+ in Allocated Contract Volume
 - 4+ Years in Operation
 - 100% KYC/AML Compliance Rate
 - 50+ Countries Served
@@ -169,7 +169,7 @@ Every shipment includes: Mine origin certificate, Assay reports and purity certi
 
 ## Why Choose IGTC
 - Compliance-first approach with 100% KYC/AML on every transaction
-- $3B+ proven track record in closed contract volume
+- $1B+ proven track record in allocated contract volume
 - Direct mine-to-market relationships eliminating intermediary costs
 - LBMA & OECD standard adherence
 - 50+ country global network across 6 continents

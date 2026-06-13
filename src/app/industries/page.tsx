@@ -78,7 +78,7 @@ export default function IndustriesPage() {
             </h1>
             <p className="text-xl text-slate-300 leading-relaxed">
               From semiconductor fabs to solar farms, our ethically sourced metals and minerals
-              are the foundation of modern industry. Over $3 billion in closed contract volume
+              are the foundation of modern industry. Over $1 billion in allocated contract volume
               serving clients across 50+ countries.
             </p>
           </div>
