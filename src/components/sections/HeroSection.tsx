@@ -112,7 +112,7 @@ export function HeroSection() {
               <div className="space-y-4 mb-6">
                 <div className="flex justify-between items-center">
                   <span className="text-slate-400 text-sm">Total Volume</span>
-                  <span className="text-white font-bold text-lg">$3,000,000,000+</span>
+                  <span className="text-white font-bold text-lg">$1,000,000,000+</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-slate-400 text-sm">Years in Operation</span>
